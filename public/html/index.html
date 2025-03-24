@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Advanced Tennis Foundation By CTM</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/main_index.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="../images/logo.png" class="navbar-brand-image img-fluid" alt="Advanced Tennis">
+                    <span class="navbar-brand-text">
+                        Advanced Tennis Foundation
+                        <small>By Congruent Tennis Model (CTM)</small>
+                    </span>
+                </a>
+
+                <div class="d-lg-none ms-auto me-3">
+                    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                        role="button" aria-controls="offcanvasExample">Member Login</a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">Membership</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_4">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="match-analysis.html">Tennis Match Analysis</a></li>
+
+                                <li><a class="dropdown-item" href="match-search.html">Past Match Database Search</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block ms-lg-3">
+                        <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                            role="button" aria-controls="offcanvasExample">Member Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Member Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <!-- Form action points to the login route -->
+                <form action="/login" method="POST" class="custom-form">
+                    <div class="form-group mb-4">
+                        <!-- Username Input -->
+                        <label for="name" class="form-label">Username:</label>
+                        <input type="text" id="name" name="username" class="form-control"
+                            required autocomplete="off">
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <!-- Password Input -->
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" 
+                            required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn form-control">Login</button>
+                </form>
+
+
+                <!-- Contact Info Section -->
+                <div class="mt-auto mb-5">
+                    <p>
+                        <strong class="text-white me-3">Any Questions?</strong>
+                        <a href="tel:010-020-0340" class="contact-link">010-020-0340</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Offcanvas Footer Design -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#3D405B" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+
+
+
+
+        <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+
+            <div class="section-overlay"></div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#3D405B" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+                </path>
+            </svg>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-5 mb-lg-0">
+                        <h2 class="text-white">Welcome To The Foundation:</h2>
+
+                        <h1 class="cd-headline rotate-1 text-white mb-4 pb-2">
+                            <span>Advanced Tennis is</span>
+                            <span class="cd-words-wrapper">
+                                <b class="is-visible">Higher Resolution</b>
+                                <b>More Descriptive</b>
+                                <b>Congruent Accuracy</b>
+                                <b>Simple and Natural</b>
+                                <b>Competitive</b>
+
+                            </span>
+                        </h1>
+
+                        <div class="custom-btn-group">
+                            <a href="#section_2" class="btn custom-btn smoothscroll me-3">Our Story</a>
+
+                            <a href="#section_3" class="btn custom-btn smoothscroll me-3">Become A Member</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/idfAAh3tKAc?si=T_n7SAzPtZVgggsY"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 text-center">
+                        <h2 class="mb-lg-5 mb-4">About Advanced Tennis Foundation</h2>
+                    </div>
+
+                    <div class="col-lg-5 col-12 me-auto mb-4 mb-lg-0">
+                        <h3 class="mb-3">Advanced Tennis Foundation Mission</h3>
+
+                        <p>The concept of <em>Congruent Tennis</em> was born out of two foundational goals, which we
+                            refer to as our <strong>Dual Objectives</strong>:</p>
+
+                        <ul>
+                            <li><strong>Harmonizing Tennis Instruction</strong> – We aim to bridge conflicting schools
+                                of tennis instruction by developing a more detailed, higher-resolution understanding of
+                                how elite tennis is played.</li>
+
+                            <li><strong>Serving the Grassroots Community</strong> – Our second goal is to offer a
+                                diverse, comprehensive, and harmonious array of instructional materials, specifically
+                                designed to support the most overlooked segment of the tennis community: grassroots
+                                players, parents, and coaches. We recognize that they form the backbone of tennis
+                                development, making them critical to the future growth and improvement of the sport.
+                            </li>
+                        </ul>
+
+                        <p>At <em>Congruent Tennis</em>, we aspire to be an open and accessible source of cutting-edge
+                            tennis insights for all who love the game.</p>
+
+                        <p>But we’re not just here to share what we know; we’re equally committed to learning from the
+                            community. Our vision is to foster an environment where every voice is valued. We believe in
+                            a <strong>bottom-up approach</strong>, as opposed to a top-down, authoritative structure. In
+                            the <em>Congruent Tennis Community</em>, ideas are discussed and refined based on their
+                            quality and merit, rather than deference to authority.</p>
+
+                        <p>This collaborative spirit is how we plan to uncover fresh insights and discover new truths
+                            about the game. By providing everyone with the opportunity to contribute meaningfully, we
+                            hope to create a vibrant, innovative tennis ecosystem.</p>
+
+                        <p>It's a collective effort, and we can’t do it alone. Join us in shaping the future of tennis
+                            by becoming a valued member of the <strong>Congruent Tennis Community</strong> today!</p>
+
+
+                    </div>
+
+
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+                        <div class="member-block">
+                            <div class="member-block-image-wrap">
+                                <img src="images/members/chuck.jpg" class="member-block-image img-fluid" alt="">
+
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="mailto:ChuckTomlin@gmail.com" class="social-icon-link bi-envelope"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="https://www.instagram.com/congruent_tennis_" class="social-icon-link bi-instagram"></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="member-block-info d-flex align-items-center">
+                                <h4>Chuck Tomlin</h4>
+
+                                <p class="ms-auto">Coach</p>
+                            </div>
+
+                            <div class="member-bio mt-3">
+                                <p>Chuck Tomlin, a former military pilot and US Navy Test Pilot School instructor,
+                                    transitioned to tennis coaching in 1992 after making Auburn's varsity football team
+                                    as a freshman. By 1996, his engineering background led him to challenge traditional
+                                    tennis strategies. Collaborating with top coaches like Rick Macci and Vic Braden, he
+                                    developed innovative systems for player performance analysis.</p>
+
+                                <p>In 2002, Tomlin introduced the <strong>Serve Code</strong> to decode powerful serves,
+                                    followed by <strong>Congrent Tennis Model (CTM)</strong> unified coaching methods,
+                                    and by 2016, he expanded CTM with John Carpenter, creating a <strong>Higher
+                                        Resolution</strong> coaching approach.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <div class="member-block">
+                            <div class="member-block-image-wrap">
+                                <img src="images/members/john.jpg" class="member-block-image img-fluid" alt="">
+
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-linkedin"></a>
+                                    </li>
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-twitter"></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="member-block-info d-flex align-items-center">
+                                <h4>John B. Carpenter</h4>
+
+                                <p class="ms-auto">Coach</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="custom-btn-group">
+                        <a href="#section_3" class="btn custom-btn smoothscroll me-3">Become A Member</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-bg-image">
+            <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill=#ffffff d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z" stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 563 89 C 724.5 89 724.5 48 886 48 L 886 48 L 886 0 L 563 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)"
+                    d="M 885 48 C 1006.5 48 1006.5 67 1128 67 L 1128 67 L 1128 0 L 885 0 Z" stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 1127 67 C 1196 67 1196 0 1265 0 L 1265 0 L 1265 0 L 1127 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <div class="section-bg-image-block">
+                            <h2 class="mb-lg-3">Get Monthly Free Newsletter</h2>
+
+                            <p>
+                                Elevate your tennis game with <strong>exclusive</strong> tips, match strategies,
+                                gear insights, and pro updates—all delivered monthly. Stay informed, inspired,
+                                and ready to win. <strong>Subscribe Now!</strong> 🏆
+                            </p>
+
+                            <form id="newsletterForm" class="news-custom-form mt-lg-4 mt-2" role="form">
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-text bi-envelope" id="basic-addon1"></span>
+                                    <input type="email" name="email" id="email" class="news-form-control"
+                                        placeholder="Email Address" required>
+                                    <button type="submit" class="news-form-control">Subscribe</button>
+                                </div>
+                            </form>
+
+                            <!-- Message display -->
+                            <div id="message" style="margin-top: 10px;"></div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="rgba(255, 255, 255, 1)" d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 563 89 C 724.5 89 724.5 48 886 48 L 886 48 L 886 0 L 563 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)"
+                    d="M 885 48 C 1006.5 48 1006.5 67 1128 67 L 1128 67 L 1128 0 L 885 0 Z" stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 1127 67 C 1196 67 1196 0 1265 0 L 1265 0 L 1265 0 L 1127 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+        </section>
+
+
+        <section class="membership-section section-padding" id="section_3">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 text-center mx-auto mb-lg-5 mb-4">
+                        <h2><span>Membership</span> at Advanced Tennis Foundation</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mb-3 mb-lg-0">
+                        <h3 class="mb-4 pb-lg-2">Private Lesson Class</h3>
+
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 34%;">Each Lesson</th>
+
+                                        <th style="width: 22%;">Atlanta Area</th>
+
+                                        <th style="width: 22%;">Remote Video Lesson</th>
+
+                                        <th style="width: 22%;">Flying-In Clinic</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="text-start">Talk With Coaches</th>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row" class="text-start">App Access</th>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row" class="text-start">Country Club</th>
+
+                                        <td>
+                                            <i class="bi-x-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row" class="text-start">Weekend Seasonal</th>
+
+                                        <td>
+                                            <i class="bi-x-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row" class="text-start">Premium Courses</th>
+
+                                        <td>
+                                            <i class="bi-x-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-x-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row" class="text-start">Pro's Networking</th>
+
+                                        <td>
+                                            <i class="bi-x-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-x-circle-fill"></i>
+                                        </td>
+
+                                        <td>
+                                            <i class="bi-check-circle-fill"></i>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <h3 class="mb-4 pb-lg-2">Signup For Membership ↓</h3>
+                        <!-- This wrapper is for the translucent background around the signup form -->
+                        <div class="signup-container">
+                            <form id="signupForm" action="/signup" method="post" class="custom-form contact-form"
+                                role="form">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="firstName" id="first-name" class="form-control"
+                                                placeholder="First Name" required="">
+                                            <label for="first-name">First Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="lastName" id="last-name" class="form-control"
+                                                placeholder="Last Name" required="">
+                                            <label for="last-name">Last Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-floating">
+                                            <input type="email" name="email" id="email" class="form-control"
+                                                placeholder="Email address" required="">
+                                            <label for="email">Email address</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="form-floating">
+                                            <input type="text" name="username" id="username" class="form-control"
+                                                placeholder="Username" required="">
+                                            <label for="username">Username</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12 col-12">
+                                        <div class="form-floating">
+                                            <input type="password" name="password" id="password" class="form-control"
+                                                placeholder="Password" required="">
+                                            <label for="password">Password</label>
+                                        </div>
+
+                                        <button type="submit" class="form-control">Submit Form</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="message" style="margin-top: 30px; margin-bottom: 0px; height: 10px; display: flex; align-items: center; justify-content: flex-start;">
+                                <p id="error-message" style="color: red; font-weight: bold;"></p>
+                                <!-- For error messages -->
+                                <p id="success-message" style="color: green; font-weight: bold;"></p>
+                                <!-- For success messages -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    
+
+
+        <section class="contact-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-5 col-12">
+                        <form id="contactForm" action="/contactus" method="post" class="custom-form contact-form" role="form">
+                            <h2 class="mb-4 pb-2">Contact Advanced Tennis Foundation</h2>
+                    
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-floating">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required>
+                                        <label for="name">Full Name</label>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="form-floating">
+                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"
+                                            placeholder="Email Address" required>
+                                        <label for="email">Email Address</label>
+                                    </div>
+                                </div>
+                    
+                                <div class="col-lg-12 col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" name="message" placeholder="Describe your message here"
+                                            required></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                    <button type="submit" class="form-control mt-4">Submit Form</button>
+                                </div>
+                            </div>
+                    
+                            <!-- Success and Error Messages -->
+                            <div id="messages" style="margin-top: 20px;">
+                                <p id="error-message-1" style="color: red; font-weight: bold; display: none;"></p>
+                                <p id="success-message-1" style="color: green; font-weight: bold; display: none;"></p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="contact-info mt-5">
+                            <div class="contact-info-item">
+                                <div class="contact-info-body">
+                                    <strong>Atlanta, Georgia, United States</strong>
+
+                                    <p class="mt-2 mb-1">
+                                        <a href="tel: 010-020-0340" class="contact-link">
+                                            000-000-0000
+                                        </a>
+                                    </p>
+
+                                    <p class="mb-0">
+                                        <a href="mailto:info@company.com" class="contact-link">
+                                            advancedtennisbyctm@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div class="contact-info-footer">
+                                    <a href="#">Directions</a>
+                                </div>
+                            </div>
+
+                            <img src="../images/WorldMap.svg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 me-auto mb-5 mb-lg-0">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="../images/logo.png" class="navbar-brand-image img-fluid" alt="Advanced Tennis">
+                        <span class="navbar-brand-text">
+                            Advanced Tennis Foundation
+                            <small>By Congruent Tennis Model (CTM)</small>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-12">
+                    <h5 class="site-footer-title mb-4">Join Us</h5>
+
+                    <p class="d-flex border-bottom pb-3 mb-3 me-lg-3">
+                        <span>Mon-Fri</span>
+                        6:00 AM - 6:00 PM
+                    </p>
+
+                    <p class="d-flex me-lg-3">
+                        <span>Sat-Sun</span>
+                        6:30 AM - 8:30 PM
+                    </p>
+                    <br>
+                    <p class="copyright-text">Copyright © 2024 Advanced Tennis Foundation</p>
+                </div>
+
+                <div class="col-lg-2 col-12 ms-auto">
+                    <ul class="social-icon mt-lg-5 mt-3 mb-4">
+                        <li class="social-icon-item">
+                            <a href="https://www.instagram.com/advancedtennisbyctm" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.facebook.com/groups/324160331562588/?ref=share&mibextid=NSMWBT" class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#81B29A" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/script.js"></script>
+
+
+</body>
+
+</html>

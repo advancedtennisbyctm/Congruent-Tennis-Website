@@ -1,0 +1,1500 @@
+
+/*---------------------------------------
+  CUSTOM PROPERTIES ( VARIABLES )             
+-----------------------------------------*/
+:root {
+    --white-color: #ffffff;
+    --primary-color: #81B29A;
+    --secondary-color: #3D405B;
+    --section-bg-color: #F4F1DE;
+    --custom-btn-bg-color: #F2CC8F;
+    --custom-btn-bg-hover-color: #E07A5F;
+    --dark-color: #000000;
+    --p-color: #717275;
+    --link-hover-color: #F2CC8F;
+    --greenish-color: #77bb78;
+
+    --body-font-family: 'DM Sans', sans-serif;
+
+    --h1-font-size: 42px;
+    --h2-font-size: 36px;
+    --h3-font-size: 28px;
+    --h4-font-size: 24px;
+    --h5-font-size: 22px;
+    --h6-font-size: 20px;
+    --p-font-size: 16px;
+    --menu-font-size: 16px;
+    --btn-font-size: 14px;
+
+    --border-radius-large: 100px;
+    --border-radius-medium: 20px;
+    --border-radius-small: 10px;
+
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
+
+body {
+    background-color: var(--white-color);
+    font-family: var(--body-font-family);
+}
+
+
+/*---------------------------------------
+    TYPOGRAPHY               
+  -----------------------------------------*/
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-medium);
+    letter-spacing: -1px;
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-weight-bold);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-weight-bold);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+h4 {
+    font-size: var(--h4-font-size);
+}
+
+h5 {
+    font-size: var(--h5-font-size);
+}
+
+h6 {
+    font-size: var(--h6-font-size);
+}
+
+p {
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-normal);
+}
+
+ul li {
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-normal);
+}
+
+a,
+button {
+    touch-action: manipulation;
+    transition: all 0.3s;
+}
+
+a {
+    display: inline-block;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover-color);
+}
+
+b,
+strong {
+    font-weight: var(--font-weight-bold);
+}
+
+
+/*---------------------------------------
+    SECTION               
+  -----------------------------------------*/
+.section-bg {
+    background-color: var(--section-bg-color);
+}
+
+.section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.section-overlay {
+    content: "";
+    background: rgba(0, 0, 0, 0) linear-gradient(rgba(39, 48, 83, 0.01) 0%, rgb(39, 48, 83) 100%) repeat scroll 0% 0%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------
+    ANIMATED HEADLINE               
+  -----------------------------------------*/
+.cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+}
+
+.cd-words-wrapper b {
+    color: var(--link-hover-color);
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+}
+
+.cd-words-wrapper b.is-visible {
+    position: relative;
+}
+
+.no-js .cd-words-wrapper b {
+    opacity: 0;
+}
+
+.no-js .cd-words-wrapper b.is-visible {
+    opacity: 1;
+}
+
+.cd-headline.rotate-1 .cd-words-wrapper {
+    -webkit-perspective: 300px;
+    -moz-perspective: 300px;
+    perspective: 300px;
+}
+
+.cd-headline.rotate-1 b {
+    opacity: 0;
+    -webkit-transform-origin: 50% 100%;
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+}
+
+.cd-headline.rotate-1 b.is-visible {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    -ms-transform: rotateX(0deg);
+    -o-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-animation: cd-rotate-1-in 1.2s;
+    -moz-animation: cd-rotate-1-in 1.2s;
+    animation: cd-rotate-1-in 1.2s;
+}
+
+.cd-headline.rotate-1 b.is-hidden {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-animation: cd-rotate-1-out 1.2s;
+    -moz-animation: cd-rotate-1-out 1.2s;
+    animation: cd-rotate-1-out 1.2s;
+}
+
+@-webkit-keyframes cd-rotate-1-in {
+    0% {
+        -webkit-transform: rotateX(180deg);
+        opacity: 0;
+    }
+
+    35% {
+        -webkit-transform: rotateX(120deg);
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(360deg);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes cd-rotate-1-in {
+    0% {
+        -moz-transform: rotateX(180deg);
+        opacity: 0;
+    }
+
+    35% {
+        -moz-transform: rotateX(120deg);
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        -moz-transform: rotateX(360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes cd-rotate-1-in {
+    0% {
+        -webkit-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+        -o-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+
+    35% {
+        -webkit-transform: rotateX(120deg);
+        -moz-transform: rotateX(120deg);
+        -ms-transform: rotateX(120deg);
+        -o-transform: rotateX(120deg);
+        transform: rotateX(120deg);
+        opacity: 0;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(360deg);
+        -moz-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        -o-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes cd-rotate-1-out {
+    0% {
+        -webkit-transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    35% {
+        -webkit-transform: rotateX(-40deg);
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes cd-rotate-1-out {
+    0% {
+        -moz-transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    35% {
+        -moz-transform: rotateX(-40deg);
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        -moz-transform: rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cd-rotate-1-out {
+    0% {
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+        -o-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    35% {
+        -webkit-transform: rotateX(-40deg);
+        -moz-transform: rotateX(-40deg);
+        -ms-transform: rotateX(-40deg);
+        -o-transform: rotateX(-40deg);
+        transform: rotateX(-40deg);
+        opacity: 1;
+    }
+
+    65% {
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+        -o-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+
+/*---------------------------------------
+    CUSTOM BUTTON               
+  -----------------------------------------*/
+.custom-btn {
+    background: var(--secondary-color);
+    border: 2px solid;
+    border-color: var(--custom-btn-bg-color);
+    border-radius: var(--border-radius-large);
+    color: var(--custom-btn-bg-color);
+    font-size: var(--btn-font-size);
+    font-weight: var(--font-weight-bold);
+    line-height: normal;
+    transition: all 0.3s;
+    padding: 10px 20px;
+}
+
+.custom-btn:hover {
+    background: var(--custom-btn-bg-hover-color);
+    color: var(--white-color);
+}
+
+.custom-border-btn {
+    background: transparent;
+    border: 2px solid var(--custom-btn-bg-color);
+    color: var(--custom-btn-bg-color);
+}
+
+.custom-border-btn:hover {
+    background: var(--custom-btn-bg-color);
+    border-color: transparent;
+    color: var(--white-color);
+}
+
+.custom-btn-bg-white {
+    border-color: var(--white-color);
+    color: var(--white-color);
+}
+
+.custom-btn-group .link {
+    color: var(--dark-color);
+    font-weight: var(--font-weight-medium);
+    background-color: var(--custom-btn-bg-hover-color);
+}
+
+.custom-btn-group .link:hover {
+    color: var(--link-hover-color);
+}
+
+
+/*---------------------------------------
+    NAVIGATION BAR & OFFCANVAS              
+  -----------------------------------------*/
+.offcanvas {
+    background-color: var(--primary-color);
+    padding: 30px;
+}
+
+.offcanvas.offcanvas-end {
+    border-left: 0;
+}
+
+.offcanvas-header .btn-close {
+    transition: all 0.3s;
+}
+
+.offcanvas-header .btn-close:hover {
+    transform: rotate(180deg);
+}
+
+.offcanvas svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.sticky-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.sticky-wrapper.is-sticky .navbar {
+    background-color: rgb(61 64 91);
+}
+
+.navbar {
+    background: transparent;
+    z-index: 99;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+    font-size: var(--h4-font-size);
+    font-weight: var(--font-weight-bold);
+    display: block;
+    color: var(--dark-color);
+    max-width: 48px;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-brand:hover {
+    color: var(--white-color);
+}
+
+.navbar .navbar-brand-image {
+    filter: brightness(0) invert(1);
+}
+
+.navbar-brand-image {
+    width: 48px;
+    height: 48px;
+}
+
+.navbar-brand-text {
+    line-height: normal;
+    margin-left: 10px;
+    position: relative;
+    bottom: 5px;
+}
+
+.navbar-brand-text small {
+    display: block;
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    border-radius: var(--border-radius-large);
+    margin: 10px;
+    padding: 10px;
+}
+
+.navbar-nav .nav-link {
+    display: inline-block;
+    color: var(--white-color);
+    font-size: var(--menu-font-size);
+    font-weight: var(--font-weight-medium);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    color: var(--link-hover-color);
+}
+
+.navbar .dropdown-menu {
+    background: var(--white-color);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+    border: 0;
+    display: inherit;
+    opacity: 0;
+    min-width: 9rem;
+    margin-top: 20px;
+    padding: 13px 0 10px 0;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+
+.navbar .dropdown-menu::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 15px solid var(--white-color);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.navbar .dropdown-item {
+    display: inline-block;
+    color: var(--p-color);
+    font-size: var(--menu-font-size);
+    font-weight: var(--font-weight-medium);
+    position: relative;
+}
+
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active,
+.navbar .dropdown-item:focus,
+.navbar .dropdown-item:hover {
+    background: transparent;
+    color: var(--link-hover-color);
+}
+
+.navbar .dropdown-toggle::after {
+    content: "\f282";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-size: var(--copyright-font-size);
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    left: 2px;
+    border: 0;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        margin-top: 0;
+        pointer-events: auto;
+    }
+}
+
+.navbar-toggler {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
+    width: 30px;
+    height: 35px;
+    outline: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+    transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+    transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+    top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+    transform: rotate(-45deg);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+    background: var(--white-color);
+    transition: background 10ms 300ms ease;
+    display: block;
+    width: 30px;
+    height: 2px;
+    position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon:before,
+.navbar-toggler .navbar-toggler-icon:after {
+    transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+    transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+    transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background: var(--white-color);
+    width: 30px;
+    height: 2px;
+    content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+    top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+    top: 8px;
+}
+
+
+/*---------------------------------------
+    HERO        
+  -----------------------------------------*/
+.hero-section {
+    background-image: url('../../images/background-splash-5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 100vh;
+    min-height: 670px;
+    margin-bottom: -90px;
+}
+
+.hero-50 {
+    height: auto;
+    min-height: 540px;
+    margin-bottom: -100px;
+}
+
+.hero-50 .container+svg {
+    transform: rotate(180deg);
+}
+
+.hero-section .ratio {
+    border-radius: var(--border-radius-medium);
+    overflow: hidden;
+}
+
+.hero-section svg {
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.hero-section>svg {
+    top: 0;
+}
+
+.hero-section .container+svg {
+    top: auto;
+    bottom: -1px;
+}
+
+.hero-section .row {
+    position: relative;
+    z-index: 22;
+}
+
+/*---------------------------------------
+  SITE FOOTER            
+-----------------------------------------*/
+.site-footer {
+    position: relative;
+    padding-bottom: 200px;
+    padding-top: 100px;
+}
+
+.site-footer .container {
+    position: relative;
+    z-index: 2;
+}
+
+.site-footer svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.site-footer-title {
+    color: var(--secondary-color);
+}
+
+.site-footer p span {
+    font-weight: var(--font-weight-medium);
+    margin-right: auto;
+}
+
+/*---------------------------------------
+  SOCIAL ICON               
+-----------------------------------------*/
+.social-icon {
+    margin: 0;
+    padding: 0;
+}
+
+.social-icon-item {
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.social-icon-link {
+    background: var(--secondary-color);
+    border-radius: var(--border-radius-large);
+    color: var(--white-color);
+    font-size: var(--btn-font-size);
+    display: block;
+    margin-right: 5px;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    line-height: 36px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.social-icon-link:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+/*---------------------------------------
+    RESPONSIVE STYLES               
+  -----------------------------------------*/
+@media screen and (max-width: 991px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 18px;
+    }
+
+    h6 {
+        font-size: 16px;
+    }
+
+    .section-padding {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .navbar {
+        background-color: var(--secondary-color);
+    }
+
+    .navbar-nav .dropdown-menu {
+        position: relative;
+        left: 10px;
+        opacity: 1;
+        pointer-events: auto;
+        max-width: 155px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .navbar-expand-lg .navbar-nav {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        margin: 5px;
+        padding: 0;
+    }
+
+    .hero-section {
+        position: relative;
+        top: 82px;
+        margin-bottom: 82px;
+    }
+
+
+    .site-footer {
+        padding-top: 20px;
+        padding-bottom: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-brand {
+        font-size: var(--p-font-size);
+    }
+
+    .navbar-brand-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-brand-icon::after {
+        top: 5px;
+    }
+
+
+
+
+    @media screen and (max-width: 360px) {
+        .custom-btn {
+            font-size: 12px;
+            padding: 4px 12px;
+        }
+    }
+
+
+    /* Additional custom styles */
+    .form-control-sm {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+
+    .btn-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .mb-1 {
+        margin-bottom: 0.25rem;
+    }}
+
+
+.hidden {
+    display: none;
+    /* Maintain the hidden elements' behavior */
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between elements */
+}
+
+.vertical-line {
+    width: 3px;
+    /* Thickness of the line */
+    background-color: white;
+    /* Ensure this color contrasts with the background */
+    height: 45px;
+    /* Adjust this height to make it visible */
+}
+
+#main-screen {
+    display: flex;
+    /* Ensures alignment with the rest of the container */
+    align-items: center;
+}
+
+
+
+
+
+/* Section container for score and actions */
+.section2-container {
+    display: flex; /* Enable flexbox layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    justify-content: flex-start; /* Align items to the start */
+    align-items: stretch; /* Make all child elements the same height */
+    gap: 0; /* Remove any gap between children */
+    width: 100%; /* Full width */
+    max-width: 1650px; /* Restrict the maximum width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Add padding */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+
+
+#score-board {
+    flex: 0 0 30%; /* Occupy 30% of the row */
+    color: rgb(255, 255, 255); /* Text color */
+    padding: 20px; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+    height: fit-content; /* Adjust height to content */
+    text-align: center; /* Align text to the center */
+    margin: auto; /* Center the scoreboard */
+    padding-top: 10px;
+
+}
+
+/* Action container for player actions */
+.action-container {
+    flex: 1; /* Take the remaining space */
+    display: flex; /* Enable flexbox for Player 1 and Player 2 */
+    justify-content: space-between; /* Space between Player 1 and Player 2 */
+    gap: 15px; /* Add space between Player 1 and Player 2 sections */
+    padding: 15px; /* Add padding inside */
+    border-radius: 8px; /* Rounded corners */
+
+}
+
+#score-board p {
+    margin: 10px 0; /* Add spacing between paragraphs */
+    font-size: 22px; /* Standard font size for small text */
+}
+
+#server-display {
+    font-size: 22px; /* Standard font size for small text */
+
+}
+
+
+#score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Space between player scores */
+}
+
+#player1-score-container, #player2-score-container {
+    font-size: 48px; /* Larger font for scores */
+    font-weight: bold; /* Bold font for clarity */
+    
+}
+
+
+#toggle-server-btn {
+    background: var(--secondary-color);
+    border: 2px solid var(--custom-btn-bg-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--custom-btn-bg-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;   
+
+    
+}
+
+#toggle-server-btn:hover {
+    background: var(--custom-btn-bg-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+}
+
+
+
+/* Player action sections */
+#player1-actions,
+#player2-actions {
+    flex: 1; /* Equal width for Player 1 and Player 2 sections */
+    display: flex; /* Enable flexbox within each section */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    background-color: transparent; /* Add light background */
+    padding: 10px; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    position: relative
+    
+}
+
+
+
+#details-container, #direction-container, #outcome-container, #mid-options-container, #mid-direction-container, #mid-outcome-container, #finish-options-container, #finish-direction-options-container, #finish-outcome-options-container, #return-details-options-container, #return-direction-options-container, #return-outcome-options-container, #serve-details-options-container, #first-serve-options-container, #second-serve-options-container {
+    flex: 1; /* Ensure equal width for Player 1 and Player 2 sections */
+    display: flex; /* Enable flexbox within the section */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    background-color: transparent; /* Transparent background */
+    padding: 5px; /* Tighter padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    margin: -4px; /* Remove any extra margins */
+}
+
+
+
+
+
+/* Adjust headings for player actions */
+#player1-actions h3,
+#player2-actions h3 {
+    margin-bottom: 10px; /* Add spacing below headings */
+    margin-top: 0px;
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold;
+    color: white;
+    font-size: 24px; /* Standard font size for small text */
+}
+
+#match-screen {
+    flex: 0 0 37%; /* Set a fixed size or percentage width */
+    margin-right: 0; /* Reset margin to avoid overlap */
+    border-radius: var(--border-radius-medium);
+    border-width: 2px;
+    box-shadow: none;
+    color: var(--p-color);
+    padding: 35px;
+    border: 2px solid white;
+    background-color: var(--secondary-color);
+    padding-bottom: 15px;
+    text-align: center; /* Centers inline content */
+    min-height: 100%; /* Ensures full height */
+}
+
+
+
+#stats-container {
+    flex: 0 0 22%; /* Set a fixed size or percentage width for middle alignment */
+    margin-left: 0; /* Push it to the middle */
+    margin-right: auto; /* Center it horizontally */
+    border-radius: var(--border-radius-medium);
+    border-width: 2px;
+    box-shadow: none;
+    color: white;
+    padding: 35px;
+    border: 2px solid white;
+    background-color: var(--secondary-color);
+    padding-bottom: 15px;
+}
+
+
+#save-stats-screen {
+    flex: 0 0 41%; /* Set a fixed size or percentage width for middle alignment */
+    margin-left: 0; /* Push it to the middle */
+    margin-right: auto; /* Center it horizontally */
+    border-radius: var(--border-radius-medium);
+    border-width: 2px;
+    box-shadow: none;
+    color: white;
+    padding: 35px;
+    border: 2px solid white;
+    background-color: var(--secondary-color);
+    padding-bottom: 15px;
+}
+
+#save-stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  #saveStatsHeading {
+    color: rgb(255, 255, 255);
+    font-size: 33px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    display: inline-block;
+    padding-bottom: 2.5px;
+}
+  /* Match information section */
+  #matchInfo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the player details */
+  .players-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Each player’s details */
+  .player-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Box styling for each player’s input group */
+  
+  /* Styling for input groups */
+  .input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Common input styling */
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Save button styling */
+  #saveStatsButton {
+    margin-top: 20px;
+
+  }
+  
+
+#visible-stats-container {
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: 100%; /* Ensure the container fills its parent's height */
+    width: 100%; /* Ensure the container fills its parent's width */
+}
+
+
+#visible-match-screen {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+#stats-screen-container{
+    flex: 1; /* Ensure equal width for Player 1 and Player 2 sections */
+    display: flex; /* Enable flexbox within the section */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    background-color: transparent; /* Transparent background */
+    padding: 5px; /* Tighter padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    margin: -4px; /* Remove any extra margins */
+}
+
+#stats-screen-container h3{
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 25px;        /* Add spacing below the heading */
+    text-align: center;          /* Center the heading text */
+    align-self: center;          /* Center heading horizontally within the container */
+    width: 100%;  
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#rally-data-1, #mid-data-1, #finish-data-1, #serve-data-1, #return-data-1, #rally-data-2, #mid-data-2, #finish-data-2, #serve-data-2, #return-data-2 {
+    background: var(--secondary-color);
+    border: 2px solid var(--custom-btn-bg-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--custom-btn-bg-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+#rally-data-1:hover, #mid-data-1:hover, #finish-data-1:hover, #serve-data-1:hover, #return-data-1:hover,#rally-data-2:hover, #mid-data-2:hover, #finish-data-2:hover, #serve-data-2:hover, #return-data-2:hover {
+    background: var(--custom-btn-bg-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+}
+
+
+
+
+#timeline-container {
+    display: flex;
+    flex-direction: column;      /* Stack heading and list vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: stretch;        /* Stretch items to fill container width */
+    width: 100%;                 /* Full width for the container */
+    max-width: 750px;            /* Optional: Limit width for readability */
+    height: 650px;               /* Increased height for the container */
+    box-sizing: border-box;      /* Include padding in height calculation */
+    padding: 10px;               /* Add padding for spacing */
+    overflow: hidden;            /* Prevent content from spilling out */
+}
+
+#timeline-container h3 {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 15px;        /* Add spacing below the heading */
+    text-align: center;          /* Center the heading text */
+    align-self: center;          /* Center heading horizontally within the container */
+    width: 100%;  
+    color: var(--white-color);
+    font-weight: bold;
+    font-size: 30px
+    
+}
+
+
+#stats-list {
+    list-style-type: none;       /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    width: 100%;                 /* Full width for list items */
+    flex-grow: 1;                /* Allow list to grow and fill available space */
+    overflow-y: auto;            /* Enable vertical scrolling */
+    height: 100%;                /* Ensure list takes remaining space */
+    scrollbar-width: medium;     /* Make scrollbar slightly wider */
+    scrollbar-color: var(--custom-btn-bg-color) var(--secondary-color); /* Scrollbar styling */
+    text-align: left;     
+    height: 850px;              
+}
+
+
+#stats-list li {
+    margin-bottom: 10px;         /* Add space between each list item */
+    text-align: left;            /* Explicitly left-align individual items */
+}
+
+#p1rally, #p1mid, #p1finish, #p1serve, #p1return, #p2rally, #p2mid, #p2finish, #p2serve, #p2return  {
+    max-height: 500px;   
+    max-width: 900px;      /* Set a maximum height for the container */
+    overflow-y: auto;          /* Enable vertical scrolling when content overflows */
+    padding: 0 40px 0 40px;         /* Add padding on the left and right to center text */
+    box-sizing: border-box;    /* Include padding in height calculation */
+    scrollbar-width: medium;     /* Make scrollbar slightly wider */
+    scrollbar-color: var(--custom-btn-bg-color) var(--secondary-color); /* Scrollbar styling */
+    text-align: center;             /* Keep text centered */
+
+}
+
+#p1rally h3, #p1mid h3, #p1finish h3, #p1serve h3, #p1return h3, #p2rally h3, #p2mid h3, #p2finish h3, #p2serve h3, #p2return h3{
+    display: inline-block;         /* Shrink-wrap the box to the content */
+    font-size: 16px;               /* Reduce the font size */
+    padding: 5px 10px;             /* Add padding inside the box */
+    background-color: var(--secondary-color); /* Set background color */
+    color: var(--custom-btn-bg-color);     /* Set text color */
+    border: 1px solid var(--custom-btn-bg-color); /* Add a border */
+    border-radius: 10px;           /* Round the edges of the box */
+    margin: 10px 0;                /* Add spacing above and below the h2 */
+}
+
+
+#p1rally h2, #p1mid h2 , #p1finish h2, #p1serve h2, #p1return h2, #p2rally h2, #p2mid h2 , #p2finish h2, #p2serve h2, #p2return h2{
+    font-size: 22px;           /* Make the text smaller */
+    font-weight: bold;         /* Keep it bold for a header feel */
+    color: var(--white-color); /* Set the color (if using variables) */
+    border-bottom: 3px solid var(--white-color);
+}
+
+
+
+#game-stats-btn, #saveStatsButton {
+    background: var(--secondary-color);
+    border: 2px solid var(--custom-btn-bg-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--custom-btn-bg-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;   
+
+}
+
+
+
+
+#game-stats-btn:hover, #saveStatsButton:hover {
+    background: var(--custom-btn-bg-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+
+}
+
+#back-to-stats-btn {
+    background: var(--secondary-color);
+    border: 2px solid var(--primary-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--primary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    align-self: center;      /* Optional: Center the button horizontally */
+    margin-top: 35px;        /* Push the button to the bottom */
+    margin-bottom: 10px;     /* Add spacing at the bottom */    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;   
+}
+
+
+
+#back-to-stats-btn:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+}
+
+
+
+
+
+/* Button styling */
+.action-btn,.finish-btn, .mid-action-btn, .side-btn, .direction-btn, .outcome-btn, .mid-side-btn, .mid-direction-btn, .mid-outcome-btn, .finish-side-btn, .finish-direction-btn, .finish-outcome-btn, .return-num-btn, .return-direction-btn, .return-outcome-btn, .serve-num-btn,  .first-serve-btn, .second-serve-btn, #back-to-match-btn, #player-1-data, #player-2-data, #match-timeline-btn {
+    background: var(--secondary-color);
+    border: 2px solid var(--custom-btn-bg-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--custom-btn-bg-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.action-btn:hover,.finish-btn:hover, .mid-action-btn:hover, .side-btn:hover, .direction-btn:hover, .outcome-btn:hover, .mid-side-btn:hover, .mid-direction-btn:hover, .mid-outcome-btn:hover, .finish-side-btn:hover, .finish-direction-btn:hover, .finish-outcome-btn:hover, .return-num-btn:hover, .return-direction-btn:hover, .return-outcome-btn:hover, .serve-num-btn:hover,  .first-serve-btn:hover, .second-serve-btn:hover, #back-to-match-btn:hover, #player-1-data:hover, #player-2-data:hover, #match-timeline-btn:hover {
+    background: var(--custom-btn-bg-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+}
+
+.serve-action-btn,.return-action-btn, .reg-back-to-match-btn, #skipped-btn, .mid-back-to-match-btn, .finish-back-to-match-btn, .return-back-to-match-btn, .serve-back-to-match-btn {
+    background: var(--secondary-color);
+    border: 2px solid var(--primary-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--primary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;   
+}
+
+.serve-action-btn:hover,.return-action-btn:hover, .reg-back-to-match-btn:hover, #skipped-btn:hover, .mid-back-to-match-btn:hover, .finish-back-to-match-btn:hover, .return-back-to-match-btn:hover, .serve-back-to-match-btn:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+}
+
+
+.double-fault-btn {
+    background: var(--secondary-color);
+    border: 2px solid var(--custom-btn-bg-hover-color); /* Add border width */
+    border-radius: var(--border-radius-large);
+    color: var(--custom-btn-bg-hover-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.double-fault-btn:hover {
+    background: var(--custom-btn-bg-hover-color);
+    color: var(--secondary-color);
+    font-size: var(--p-font-size);
+    font-weight: var(--font-weight-bold);
+    border-color: transparent;
+}
+
+
+
+
+#p1-action-container,#p2-action-container {
+
+    flex: 1; /* Ensure equal width for Player 1 and Player 2 sections */
+    display: flex; /* Enable flexbox within the section */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+    background-color: transparent; /* Transparent background */
+    padding: 5px; /* Tighter padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    margin: -4px; /* Remove any extra margins */
+}
+
+
+.section-bg-image {
+    background-image: url('../../images/background-splash-4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: -70px;
+  }
+  
+  .section-bg-image .container+svg {
+    transform: rotate(180deg);
+    position: relative;
+    bottom: -1px;
+  }
+  
+  
+  .section-bg-image-block {
+    position: relative;
+    z-index: 3; /* Ensure content is above the waves if needed */
+    padding: 60px 0;
+    text-align: center;
+    color: #fff; /* default text color for parent sections */
+  }
+  .coming-soon-content {
+    padding: 20px;              /* Adjust padding for a smaller box */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Translucent white background */
+    color: #333;                /* Text color for readability */
+    border-radius: 8px;         /* Optional: rounded corners */
+    max-width: 450px;           /* Limit the box width */
+    margin: 0 auto;             /* Center the box horizontally */
+  }

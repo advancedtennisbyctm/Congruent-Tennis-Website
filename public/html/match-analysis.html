@@ -1,0 +1,1478 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tennis Match Analysis | Advanced Tennis Foundation By CTM</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/match-analysis.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+
+    <!--
+
+-->
+</head>
+
+<body>
+
+    <main>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="../images/logo.png" class="navbar-brand-image img-fluid" alt="Advanced Tennis">
+                    <span class="navbar-brand-text">
+                        Advanced Tennis Foundation
+                        <small>By Congruent Tennis Model (CTM)</small>
+                    </span>
+                </a>
+
+                <div class="d-lg-none ms-auto me-3">
+                    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                        role="button" aria-controls="offcanvasExample">Member Login</a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_3">Membership</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_4">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="match-analysis.html">Tennis Match Analysis</a></li>
+
+                                <li><a class="dropdown-item" href="match-search.html">Past Match Database Search</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block ms-lg-3">
+                        <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                            role="button" aria-controls="offcanvasExample">Member Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Member Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <!-- Form action points to the login route -->
+                <form action="/login" method="POST" class="custom-form">
+                    <div class="form-group mb-4">
+                        <!-- Username Input -->
+                        <label for="name" class="form-label">Username:</label>
+                        <input type="text" id="name" name="username" class="form-control" required autocomplete="off">
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <!-- Password Input -->
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn form-control">Login</button>
+                </form>
+
+
+                <!-- Contact Info Section -->
+                <div class="mt-auto mb-5">
+                    <p>
+                        <strong class="text-white me-3">Any Questions?</strong>
+                        <a href="tel:010-020-0340" class="contact-link">010-020-0340</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Offcanvas Footer Design -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#3D405B" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+
+
+        <section class="hero-section hero-50 d-flex justify-content-center align-items-center" id="section_1">
+
+            <div class="section-overlay"></div>
+
+            <svg viewBox="0 0 1962 178" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="#3D405B" d="M 0 114 C 118.5 114 118.5 167 237 167 L 237 167 L 237 0 L 0 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 236 167 C 373 167 373 128 510 128 L 510 128 L 510 0 L 236 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 509 128 C 607 128 607 153 705 153 L 705 153 L 705 0 L 509 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 704 153 C 812 153 812 113 920 113 L 920 113 L 920 0 L 704 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 919 113 C 1048.5 113 1048.5 148 1178 148 L 1178 148 L 1178 0 L 919 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 1177 148 C 1359.5 148 1359.5 129 1542 129 L 1542 129 L 1542 0 L 1177 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 1541 129 C 1751.5 129 1751.5 138 1962 138 L 1962 138 L 1962 0 L 1541 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+
+                        <h1 class="text-white mb-4 pb-2">Tennis Match Analysis</h1>
+
+                        <div class="button-container">
+                            <a href="match-search.html" class="btn custom-btn smoothscroll">Search For Past Matches</a>
+                            <div class="vertical-line"></div>
+                            <div id="main-screen">
+                                <button id="create-match-btn" class="btn custom-btn">Create Match</button>
+                            </div>
+                            <div id="set-selection-screen" class="hidden">
+                                <button href="#section_2" id="three-sets-btn" class="btn custom-btn smoothscroll">3
+                                    Sets</button>
+                                <button href="#section_2" id="five-sets-btn" class="btn custom-btn smoothscroll">5
+                                    Sets</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <svg viewBox="0 0 1962 89" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="#ffffff" d="M 0 57 C 118.5 57 118.5 83.5 237 83.5 L 237 83.5 L 237 0 L 0 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 236 83.5 C 373 83.5 373 64 510 64 L 510 64 L 510 0 L 236 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 509 64 C 607 64 607 76.5 705 76.5 L 705 76.5 L 705 0 L 509 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 704 76.5 C 812 76.5 812 56.5 920 56.5 L 920 56.5 L 920 0 L 704 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 919 56.5 C 1048.5 56.5 1048.5 74 1178 74 L 1178 74 L 1178 0 L 919 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 1177 74 C 1359.5 74 1359.5 64.5 1542 64.5 L 1542 64.5 L 1542 0 L 1177 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 1541 64.5 C 1751.5 64.5 1751.5 69 1962 69 L 1962 69 L 1962 0 L 1541 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+
+        </section>
+
+
+        <section class="events-section section-padding" id="section_2">
+            <div class="section2-container">
+                <div id="match-screen" class="hidden">
+                    <div id="visible-match-screen">
+                        <div id="score-board">
+                            <p>Set Score: <span id="set-counter">0-0</span></p>
+                            <p>Game Score: <span id="game-counter">0-0</span></p>
+                            <p>Game <span id="current-game">1</span></p>
+
+                            <div id='score'>
+                                <p id="player1-score-container"><span id="player1-score">0</span></p>
+                                <p id="player2-score-container"><span id="player2-score">0</span></p>
+                            </div>
+                            <button id="toggle-server-btn">Toggle Server</button>
+                            <div id="server-display">Current Server: Player 1</div>
+                        </div>
+
+
+
+
+
+                        <div class="action-container">
+                            <div id="player1-actions" class="hidden">
+                                <h3>Player 1 Actions</h3>
+                                <button class="action-btn hidden" data-player="1"
+                                    data-action="Rally with">Rally</button>
+
+                                <div id="details-screen">
+                                    <div id="details-options" class="hidden">
+                                        <div id="details-container">
+                                            <button class="side-btn"
+                                                data-side="Forehand Resulting In A">Forehand</button>
+                                            <button class="side-btn"
+                                                data-side="Backhand Resulting In A">Backhand</button>
+                                            <button class="reg-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="direction-options" class="hidden">
+                                        <div id="direction-container">
+                                            <button class="direction-btn" data-direction="a Fade">Fade</button>
+                                            <button class="direction-btn" data-direction="a Draw">Draw</button>
+                                            <button id='skipped-btn' class="direction-btn"
+                                                data-direction="">Skip</button>
+                                            <button class="reg-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="outcome-options" class="hidden">
+                                        <div id="outcome-container">
+                                            <button class="outcome-btn" data-outcome="Winner">Winner Shot</button>
+                                            <button class="outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="reg-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="mid-action-btn hidden" data-player="1"
+                                    data-action="Mid Court Attacked with">Mid
+                                    Attack</button>
+
+                                <div id="mid-screen">
+                                    <div id="mid-options" class="hidden">
+                                        <div id="mid-options-container">
+                                            <button class="mid-side-btn"
+                                                data-side="Forehand Resulting In A">Forehand</button>
+                                            <button class="mid-side-btn"
+                                                data-side="Backhand Resulting In A">Backhand</button>
+                                            <button class="mid-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="mid-direction-options" class="hidden">
+                                        <div id="mid-direction-container">
+                                            <button class="mid-direction-btn" data-direction="a Fade">Fade</button>
+                                            <button class="mid-direction-btn" data-direction="a Draw">Draw</button>
+                                            <button class="mid-direction-btn" data-direction="a 3rd Dagger">3rd
+                                                Dagger (Dropshot)</button>
+                                            <button id='skipped-btn' class="mid-direction-btn"
+                                                data-direction="">Skip</button>
+                                            <button class="mid-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="mid-outcome-options" class="hidden">
+                                        <div id="mid-outcome-container">
+
+                                            <button class="mid-outcome-btn" data-outcome="Winner">Winner Shot</button>
+                                            <button class="mid-outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="mid-outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="mid-back-to-match-btn">Back to Match</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <button class="finish-btn hidden" data-player="1"
+                                    data-action="Scored in the Finish Area with">Finish
+                                    Area</button>
+
+                                <div id="finishing-screen">
+                                    <div id="finish-options" class="hidden">
+                                        <div id="finish-options-container">
+                                            <button class="finish-side-btn"
+                                                data-side="Forehand Resulting In A">Forehand</button>
+                                            <button class="finish-side-btn"
+                                                data-side="Backhand Resulting In A">Backhand</button>
+                                            <button class="finish-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="finish-direction-options" class="hidden">
+                                        <div id="finish-direction-options-container">
+                                            <button class="finish-direction-btn"
+                                                data-direction="a Volley">Volley</button>
+                                            <button class="finish-direction-btn" data-direction="a Overhead">Overhead
+                                                Shot</button>
+                                            <button class="finish-direction-btn" data-direction="a 3rd Dagger">3rd
+                                                Dagger (Dropshot)</button>
+                                            <button class="finish-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="finish-outcome-options" class="hidden">
+                                        <div id="finish-outcome-options-container">
+                                            <button class="finish-outcome-btn" data-outcome="Winner">Winner
+                                                Shot</button>
+                                            <button class="finish-outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="finish-outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="finish-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button class="serve-action-btn hidden" data-player="1"
+                                    data-action="Served">Serve</button>
+                                <div id='serve-detail-screen'>
+                                    <div id="serve-details-options" class="hidden">
+                                        <div id="serve-details-options-container">
+                                            <button class="serve-num-btn" data-side="On First Serve Resulting In">First
+                                                Serve</button>
+                                            <button class="serve-num-btn"
+                                                data-side="On Second Serve Resulting In">Second
+                                                Serve</button>
+                                            <button class="serve-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="first-serve-options" class="hidden">
+                                        <div id="first-serve-options-container">
+                                            <button class="first-serve-btn" data-first="An Ace">Ace</button>
+                                            <button class="first-serve-btn" data-first="A Winner">Winner</button>
+                                            <button class="serve-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="second-serve-options" class="hidden">
+                                        <div id="second-serve-options-container">
+                                            <button class="second-serve-btn" data-second="An Ace">Ace</button>
+                                            <button class="second-serve-btn" data-second="A Winner">Winner</button>
+                                            <button class="second-serve-btn double-fault-btn"
+                                                data-second="A Double Fault">Double Fault</button>
+                                            <button class="serve-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="return-action-btn hidden" data-player="1"
+                                    data-action="Returned Serve With">Return
+                                    Serve</button>
+
+                                <div id='return-detail-screen'>
+                                    <div id="return-details-options" class="hidden">
+                                        <div id="return-details-options-container">
+                                            <button class="return-num-btn"
+                                                data-side="On First Serve Resulting In A">First
+                                                Serve</button>
+                                            <button class="return-num-btn"
+                                                data-side="On Second Serve Resulting In A">Second
+                                                Serve</button>
+                                            <button class="return-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="return-direction-options" class="hidden">
+                                        <div id="return-direction-options-container">
+                                            <button class="return-direction-btn" data-direction="a Fade">Fade</button>
+                                            <button class="return-direction-btn" data-direction="a Draw">Draw</button>
+                                            <button id='skipped-btn' class="return-direction-btn"
+                                                data-direction="">Skip</button>
+
+                                            <button class="return-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="return-outcome-options" class="hidden">
+                                        <div id="return-outcome-options-container">
+                                            <button class="return-outcome-btn" data-outcome="Winner">Winner
+                                                Shot</button>
+                                            <button class="return-outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="return-outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="return-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div id="player2-actions" class="hidden">
+                                <h3>Player 2 Actions</h3>
+                                <button class="action-btn hidden" data-player="2"
+                                    data-action="Rally with">Rally</button>
+
+                                <div id="details-screen">
+                                    <div id="details-options" class="hidden">
+                                        <div id="details-container">
+                                            <button class="side-btn"
+                                                data-side="Forehand Resulting In A">Forehand</button>
+                                            <button class="side-btn"
+                                                data-side="Backhand Resulting In A">Backhand</button>
+                                            <button class="reg-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="direction-options" class="hidden">
+                                        <div id="direction-container">
+                                            <button class="direction-btn" data-direction="a Fade">Fade</button>
+                                            <button class="direction-btn" data-direction="a Draw">Draw</button>
+                                            <button id='skipped-btn' class="direction-btn"
+                                                data-direction="">Skip</button>
+                                            <button class="reg-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="outcome-options" class="hidden">
+                                        <div id="outcome-container">
+                                            <button class="outcome-btn" data-outcome="Winner">Winner Shot</button>
+                                            <button class="outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="reg-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="mid-action-btn hidden" data-player="2"
+                                    data-action="Mid Court Attacked with">Mid
+                                    Attack</button>
+
+                                <div id="mid-screen">
+                                    <div id="mid-options" class="hidden">
+                                        <div id="mid-options-container">
+                                            <button class="mid-side-btn"
+                                                data-side="Forehand Resulting In A">Forehand</button>
+                                            <button class="mid-side-btn"
+                                                data-side="Backhand Resulting In A">Backhand</button>
+                                            <button class="mid-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="mid-direction-options" class="hidden">
+                                        <div id="mid-direction-container">
+                                            <button class="mid-direction-btn" data-direction="a Fade">Fade</button>
+                                            <button class="mid-direction-btn" data-direction="a Draw">Draw</button>
+                                            <button class="mid-direction-btn" data-direction="a 3rd Dagger">3rd
+                                                Dagger (Dropshot)</button>
+                                            <button id='skipped-btn' class="mid-direction-btn"
+                                                data-direction="">Skip</button>
+                                            <button class="mid-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="mid-outcome-options" class="hidden">
+                                        <div id="mid-outcome-container">
+
+                                            <button class="mid-outcome-btn" data-outcome="Winner">Winner Shot</button>
+                                            <button class="mid-outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="mid-outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="mid-back-to-match-btn">Back to Match</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <button class="finish-btn hidden" data-player="2"
+                                    data-action="Scored in the Finish Area with">Finish Area</button>
+
+                                <div id="finishing-screen">
+                                    <div id="finish-options" class="hidden">
+                                        <div id="finish-options-container">
+                                            <button class="finish-side-btn"
+                                                data-side="Forehand Resulting In A">Forehand</button>
+                                            <button class="finish-side-btn"
+                                                data-side="Backhand Resulting In A">Backhand</button>
+                                            <button class="finish-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="finish-direction-options" class="hidden">
+                                        <div id="finish-direction-options-container">
+                                            <button class="finish-direction-btn"
+                                                data-direction="a Volley">Volley</button>
+                                            <button class="finish-direction-btn" data-direction="a Overhead">Overhead
+                                                Shot</button>
+                                            <button class="finish-direction-btn" data-direction="a 3rd Dagger">3rd
+                                                Dagger (Dropshot)</button>
+                                            <button class="finish-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                    <div id="finish-outcome-options" class="hidden">
+                                        <div id="finish-outcome-options-container">
+                                            <button class="finish-outcome-btn" data-outcome="Winner">Winner
+                                                Shot</button>
+                                            <button class="finish-outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="finish-outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="finish-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="serve-action-btn hidden" data-player="2"
+                                    data-action="Served">Serve</button>
+
+                                <div id='serve-detail-screen'>
+                                    <div id="serve-details-options" class="hidden">
+                                        <div id="serve-details-options-container">
+                                            <button class="serve-num-btn" data-side="On First Serve Resulting In">First
+                                                Serve</button>
+                                            <button class="serve-num-btn"
+                                                data-side="On Second Serve Resulting In">Second
+                                                Serve</button>
+                                            <button class="serve-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="first-serve-options" class="hidden">
+                                        <div id="first-serve-options-container">
+                                            <button class="first-serve-btn" data-first="An Ace">Ace</button>
+                                            <button class="first-serve-btn" data-first="A Winner">Winner</button>
+                                            <button class="serve-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="second-serve-options" class="hidden">
+                                        <div id="second-serve-options-container">
+                                            <button class="second-serve-btn" data-second="An Ace">Ace</button>
+                                            <button class="second-serve-btn" data-second="A Winner">Winner</button>
+                                            <button class="second-serve-btn double-fault-btn"
+                                                data-second="A Double Fault">Double Fault</button>
+                                            <button class="serve-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="return-action-btn hidden" data-player="2"
+                                    data-action="Returned Serve With">Return
+                                    Serve</button>
+
+                                <div id='return-detail-screen'>
+                                    <div id="return-details-options" class="hidden">
+                                        <div id="return-details-options-container">
+                                            <button class="return-num-btn"
+                                                data-side="On First Serve Resulting In A">First
+                                                Serve</button>
+                                            <button class="return-num-btn"
+                                                data-side="On Second Serve Resulting In A">Second
+                                                Serve</button>
+                                            <button class="return-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="return-direction-options" class="hidden">
+                                        <div id="return-direction-options-container">
+                                            <button class="return-direction-btn" data-direction="a Fade">Fade</button>
+                                            <button class="return-direction-btn" data-direction="a Draw">Draw</button>
+                                            <button id='skipped-btn' class="return-direction-btn"
+                                                data-direction="">Skip</button>
+
+                                            <button class="return-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+
+                                    <div id="return-outcome-options" class="hidden">
+                                        <div id="return-outcome-options-container">
+                                            <button class="return-outcome-btn" data-outcome="Winner">Winner
+                                                Shot</button>
+                                            <button class="return-outcome-btn" data-outcome="Unforced Error">Unforced
+                                                Error</button>
+                                            <button class="return-outcome-btn" data-outcome="Forced Error">Forced
+                                                Error</button>
+                                            <button class="return-back-to-match-btn">Back to Match</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="stats-container" class='hidden'>
+                    <div id="visible-stats-container">
+                        <button id="game-stats-btn" class="hidden">Game Stats</button>
+                        <div id="stats-screen" class="hidden">
+                            <div id="stats-screen-container">
+                                <h3 id="game-stats" class="hidden">Game Stats</h3>
+                                <button id="player-1-data" class="hidden">Player 1 Stats</button>
+                                <div id="player1-data-container">
+                                    <h3 id="p1" class="hidden">Player 1 Data</h3>
+                                    <button id="rally-data-1" class="hidden">Rally Stats</button>
+                                    <button id="mid-data-1" class="hidden">Mid Attack Stats</button>
+                                    <button id="finish-data-1" class="hidden">Finish Area Stats</button>
+                                    <button id="serve-data-1" class="hidden">Serve Stats</button>
+                                    <button id="return-data-1" class="hidden">Returned Serve Stats</button>
+
+                                    <div id="p1-action-data">
+                                        <div id='p1rally' class="hidden">
+                                            <h2>Forehand Rally</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p1-forehand-rally-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-forehand-rally-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-forehand-rally-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p1-forehand-rally-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-forehand-rally-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-forehand-rally-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p1-forehand-rally-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-forehand-rally-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-forehand-rally-skip-forced-error">0</span></p>
+                                            <h2>Backhand Rally</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p1-backhand-rally-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-backhand-rally-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-backhand-rally-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p1-backhand-rally-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-backhand-rally-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-backhand-rally-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p1-backhand-rally-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-backhand-rally-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-backhand-rally-skip-forced-error">0</span></p>
+                                        </div>
+
+                                        <div id='p1mid' class="hidden">
+                                            <h2>Forehand Mid Attack</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p1-forehand-mid-ct-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-mid-ct-fade-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-forehand-mid-ct-fade-forced-error">0</span>
+                                            </p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p1-forehand-mid-ct-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-mid-ct-draw-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-forehand-mid-ct-draw-forced-error">0</span>
+                                            </p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p1-forehand-mid-ct-drop-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-mid-ct-drop-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-forehand-mid-ct-drop-forced-error">0</span>
+                                            </p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p1-forehand-mid-ct-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-mid-ct-skip-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-forehand-mid-ct-skip-forced-error">0</span>
+                                            </p>
+                                            <h2>Backhand Mid Attack</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p1-backhand-mid-ct-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-mid-ct-fade-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-backhand-mid-ct-fade-forced-error">0</span>
+                                            </p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p1-backhand-mid-ct-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-mid-ct-draw-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-backhand-mid-ct-draw-forced-error">0</span>
+                                            </p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p1-backhand-mid-ct-drop-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-mid-ct-drop-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-backhand-mid-ct-drop-forced-error">0</span>
+                                            </p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p1-backhand-mid-ct-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-mid-ct-skip-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-backhand-mid-ct-skip-forced-error">0</span>
+                                            </p>
+                                        </div>
+
+                                        <div id='p1finish' class="hidden">
+                                            <h2>Forehand Finishing</h2>
+                                            <h3>Volley</h3>
+                                            <p>Winner: <span id="p1-forehand-finish-volley-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-finish-volley-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-forehand-finish-volley-forced-error">0</span>
+                                            </p>
+                                            <h3>Overhead Shot</h3>
+                                            <p>Winner: <span id="p1-forehand-finish-overhead-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-finish-overhead-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span
+                                                    id="p1-forehand-finish-overhead-forced-error">0</span></p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p1-forehand-finish-dropshot-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-forehand-finish-dropshot-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span
+                                                    id="p1-forehand-finish-dropshot-forced-error">0</span></p>
+
+                                            <h2>Backhand Finishing</h2>
+                                            <h3>Volley</h3>
+                                            <p>Winner: <span id="p1-backhand-finish-volley-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-finish-volley-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p1-backhand-finish-volley-forced-error">0</span>
+                                            </p>
+                                            <h3>Overhead Shot</h3>
+                                            <p>Winner: <span id="p1-backhand-finish-overhead-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-finish-overhead-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span
+                                                    id="p1-backhand-finish-overhead-forced-error">0</span></p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p1-backhand-finish-dropshot-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p1-backhand-finish-dropshot-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span
+                                                    id="p1-backhand-finish-dropshot-forced-error">0</span></p>
+                                        </div>
+
+
+
+
+                                        <div id='p1serve' class="hidden">
+                                            <h2>1st Serve</h2>
+                                            <p>Ace: <span id="p1-first-serve-ace">0</span></p>
+                                            <p>Winner: <span id="p1-first-serve-winner">0</span></p>
+
+                                            <h2>2nd Serve</h2>
+                                            <p>Ace: <span id="p1-second-serve-ace">0</span></p>
+                                            <p>Winner: <span id="p1-second-serve-winner">0</span></p>
+                                            <p>Double Fault: <span id="p1-second-serve-df">0</span></p>
+                                        </div>
+
+
+                                        <div id='p1return' class="hidden">
+                                            <h2>Returned 1st Serve</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p1-first-return-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-first-return-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-first-reture-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p1-first-return-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-first-return-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-first-reture-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p1-first-return-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-first-return-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-first-reture-skip-forced-error">0</span></p>
+                                            <h2>Returned 2nd Serve</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p1-second-return-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-second-return-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-second-return-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p1-second-return-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-second-return-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-second-return-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p1-second-return-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p1-second-return-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p1-second-return-skip-forced-error">0</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <button id="player-2-data" class="hidden">Player 2 Stats</button>
+                                <div id="player2-data-container">
+                                    <h3 id="p2" class="hidden">Player 2 Data</h3>
+                                    <button id="rally-data-2" class="hidden">Rally Stats</button>
+                                    <button id="mid-data-2" class="hidden">Mid Attack Stats</button>
+                                    <button id="finish-data-2" class="hidden">Finish Area Stats</button>
+                                    <button id="serve-data-2" class="hidden">Serve Stats</button>
+                                    <button id="return-data-2" class="hidden">Returned Serve Stats</button>
+
+                                    <div id="p2-action-data">
+
+                                        <div id="p2rally" class="hidden">
+                                            <h2>Forehand Rally</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p2-forehand-rally-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-forehand-rally-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-forehand-rally-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p2-forehand-rally-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-forehand-rally-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-forehand-rally-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p2-forehand-rally-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-forehand-rally-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-forehand-rally-skip-forced-error">0</span></p>
+                                            <h2>Backhand Rally</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p2-backhand-rally-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-backhand-rally-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-backhand-rally-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p2-backhand-rally-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-backhand-rally-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-backhand-rally-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p2-backhand-rally-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-backhand-rally-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-backhand-rally-skip-forced-error">0</span></p>
+                                        </div>
+
+                                        <div id="p2mid" class="hidden">
+                                            <h2>Forehand Mid Attack</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p2-forehand-mid-ct-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-mid-ct-fade-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-forehand-mid-ct-fade-forced-error">0</span>
+                                            </p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p2-forehand-mid-ct-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-mid-ct-draw-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-forehand-mid-ct-draw-forced-error">0</span>
+                                            </p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p2-forehand-mid-ct-drop-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-mid-ct-drop-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-forehand-mid-ct-drop-forced-error">0</span>
+                                            </p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p2-forehand-mid-ct-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-mid-ct-skip-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-forehand-mid-ct-skip-forced-error">0</span>
+                                            </p>
+
+
+                                            <h2>Backhand Mid Attack</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p2-backhand-mid-ct-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-mid-ct-fade-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-backhand-mid-ct-fade-forced-error">0</span>
+                                            </p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p2-backhand-mid-ct-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-mid-ct-draw-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-backhand-mid-ct-draw-forced-error">0</span>
+                                            </p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p2-backhand-mid-ct-drop-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-mid-ct-drop-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-backhand-mid-ct-drop-forced-error">0</span>
+                                            </p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p2-backhand-mid-ct-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-mid-ct-skip-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-backhand-mid-ct-skip-forced-error">0</span>
+                                            </p>
+                                        </div>
+
+
+
+                                        <div id='p2finish' class="hidden">
+                                            <h2>Forehand Finishing</h2>
+                                            <h3>Volley</h3>
+                                            <p>Winner: <span id="p2-forehand-finish-volley-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-finish-volley-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-forehand-finish-volley-forced-error">0</span>
+                                            </p>
+                                            <h3>Overhead Shot</h3>
+                                            <p>Winner: <span id="p2-forehand-finish-overhead-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-finish-overhead-unforced-error">0</span></p>
+                                            <p>Forced Error: <span
+                                                    id="p2-forehand-finish-overhead-forced-error">0</span></p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p2-forehand-finish-dropshot-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-forehand-finish-dropshot-unforced-error">0</span></p>
+                                            <p>Forced Error: <span
+                                                    id="p2-forehand-finish-dropshot-forced-error">0</span></p>
+
+
+
+                                            <h2>Backhand Finishing</h2>
+                                            <h3>Volley</h3>
+                                            <p>Winner: <span id="p2-backhand-finish-volley-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-finish-volley-unforced-error">0</span></p>
+                                            <p>Forced Error: <span id="p2-backhand-finish-volley-forced-error">0</span>
+                                            </p>
+                                            <h3>Overhead Shot</h3>
+                                            <p>Winner: <span id="p2-backhand-finish-overhead-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-finish-overhead-unforced-error">0</span></p>
+                                            <p>Forced Error: <span
+                                                    id="p2-backhand-finish-overhead-forced-error">0</span></p>
+                                            <h3>3rd Dagger (Dropshot)</h3>
+                                            <p>Winner: <span id="p2-backhand-finish-dropshot-winner">0</span></p>
+                                            <p>Unforced Error: <span
+                                                    id="p2-backhand-finish-dropshot-unforced-error">0</span></p>
+                                            <p>Forced Error: <span
+                                                    id="p2-backhand-finish-dropshot-forced-error">0</span></p>
+                                        </div>
+
+
+
+                                        <div id="p2serve" class="hidden">
+                                            <h2>1st Server</h2>
+                                            <p>Ace: <span id="p2-first-serve-ace">0</span></p>
+                                            <p>Winner: <span id="p2-first-serve-winner">0</span></p>
+
+                                            <h2>2nd Server</h2>
+                                            <p>Ace: <span id="p2-second-serve-ace">0</span></p>
+                                            <p>Winner: <span id="p2-second-serve-winner">0</span></p>
+                                            <p>Double Fault: <span id="p2-second-serve-df">0</span></p>
+                                        </div>
+
+                                        <div id="p2return" class="hidden">
+                                            <h2>Returned 1st Serve</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p2-first-return-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-first-return-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-first-return-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p2-first-return-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-first-return-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-first-return-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p2-first-return-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-first-return-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-first-return-skip-forced-error">0</span></p>
+                                            <h2>Returned 2nd Serve</h2>
+                                            <h3>Fade</h3>
+                                            <p>Winner: <span id="p2-second-return-fade-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-second-return-fade-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-second-return-fade-forced-error">0</span></p>
+                                            <h3>Draw</h3>
+                                            <p>Winner: <span id="p2-second-return-draw-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-second-return-draw-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-second-return-draw-forced-error">0</span></p>
+                                            <h3>Regular (Skipped)</h3>
+                                            <p>Winner: <span id="p2-second-return-skip-winner">0</span></p>
+                                            <p>Unforced Error: <span id="p2-second-return-skip-unforced-error">0</span>
+                                            </p>
+                                            <p>Forced Error: <span id="p2-second-return-skip-forced-error">0</span></p>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <button id="match-timeline-btn">Match Timeline</button>
+                                    <div id="matchTimeline" class="hidden">
+                                        <div id="timeline-container">
+                                            <h3>Match Timeline</h3>
+                                            <ul id="stats-list"></ul>
+                                        </div>
+
+                                    </div>
+                                    <button id="back-to-stats-btn" class="hidden">Back To Stats Selection</button>
+                                    <button id="back-to-match-btn" class="hidden">Back to Match</button>
+
+
+
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+
+                <div id="save-stats-screen" class="hidden">
+                    <div id="save-stats-container">
+                        <h3 id="saveStatsHeading">Save Stats To The Database</h3>
+
+                        <div id="matchInfo" style="text-align: center; margin-bottom: 20px;">
+                            <label for="matchName">Match Name</label>
+                            <input type="text" id="matchName" name="matchName" required>
+                            <label for="matchDate">Date of Match</label>
+                            <input type="date" id="matchDate" name="matchDate" required>
+                        </div>
+
+                        <!-- Flex Container for Player Details -->
+                        <div class="players-container" style="display: flex; gap: 20px; justify-content: center;">
+
+                            <!-- Player 1 Details -->
+                            <div class="player-details"
+                                style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                                <div id="player1-details" class="player-box">
+                                    <label for="player1Name">Player 1 Full Name:</label>
+                                    <input type="text" id="player1Name" name="player1Name" required>
+                                    <label for="player1Age">Player 1 Age:</label>
+                                    <input type="number" id="player1Age" name="player1Age" required>
+
+                                    <label for="player1Gender">Player 1 Gender:</label>
+                                    <select id="player1Gender" name="player1Gender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+
+                                    <label for="player1Height">Player 1 Height:</label>
+                                    <div class="input-container">
+                                        <input type="number" id="player1Feet" name="player1Feet" placeholder="ft"
+                                            style="display:none;" min="0">
+                                        <input type="number" id="player1Inches" name="player1Inches" placeholder="in"
+                                            style="display:none;" min="0" max="11">
+                                        <input type="number" id="player1Height" name="player1Height" placeholder="cm"
+                                            required>
+                                        <select id="player1HeightUnit" name="player1HeightUnit"
+                                            onchange="updateHeightInput('player1')" required>
+                                            <option value="cm">cm</option>
+                                            <option value="ft">ft-in</option>
+                                        </select>
+                                    </div>
+
+                                    <label for="player1DominantHand">Dominant Hand:</label>
+                                    <select id="player1DominantHand" name="player1DominantHand" required>
+                                        <option value="">Select Dominant Hand</option>
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                        <option value="ambidextrous">Ambidextrous</option>
+                                    </select>
+
+                                    <label for="player1Racket">Racket Used for Match:</label>
+                                    <select id="player1Racket" name="player1Racket" onchange="checkCustomRacket(this)">
+                                        <option value="" disabled selected>Select Racket</option>
+                                        <optgroup label="Babolat">
+                                            <option value="Pure Drive">Pure Drive</option>
+                                            <option value="Pure Aero">Pure Aero</option>
+                                            <option value="Pure Strike">Pure Strike</option>
+                                            <option value="Boost">Boost</option>
+                                            <option value="Evo Drive">Evo Drive</option>
+                                            <option value="Drive Max">Drive Max</option>
+                                            <option value="Aero Pro Drive">Aero Pro Drive</option>
+                                            <option value="Strike VS">Strike VS</option>
+                                            <option value="Aero Tour">Aero Tour</option>
+                                            <option value="Reakt">Reakt</option>
+                                        </optgroup>
+                                        <optgroup label="Head">
+                                            <option value="Prestige">Prestige</option>
+                                            <option value="Speed">Speed</option>
+                                            <option value="Radical">Radical</option>
+                                            <option value="Gravity">Gravity</option>
+                                            <option value="Extreme">Extreme</option>
+                                            <option value="Boom">Boom</option>
+                                            <option value="Instinct">Instinct</option>
+                                            <option value="Ti.S6">Ti.S6</option>
+                                            <option value="Challenge">Challenge</option>
+                                            <option value="PWR Series">PWR Series</option>
+                                        </optgroup>
+                                        <optgroup label="Wilson">
+                                            <option value="Blade">Blade</option>
+                                            <option value="Pro Staff">Pro Staff</option>
+                                            <option value="Clash">Clash</option>
+                                            <option value="Ultra">Ultra</option>
+                                            <option value="Burn">Burn</option>
+                                            <option value="Triad">Triad</option>
+                                            <option value="Tempest">Tempest</option>
+                                            <option value="K Factor">K Factor</option>
+                                            <option value="Hammer">Hammer</option>
+                                            <option value="Profile">Profile</option>
+                                        </optgroup>
+                                        <optgroup label="Yonex">
+                                            <option value="Ezone">Ezone</option>
+                                            <option value="VCORE">VCORE</option>
+                                            <option value="VCORE Pro">VCORE Pro</option>
+                                            <option value="Percept">Percept</option>
+                                            <option value="Astrel">Astrel</option>
+                                            <option value="Nanoray">Nanoray</option>
+                                            <option value="Arcsaber">Arcsaber</option>
+                                            <option value="Rexking">Rexking</option>
+                                            <option value="RDS">RDS</option>
+                                            <option value="Ultimum">Ultimum</option>
+                                        </optgroup>
+                                        <optgroup label="Tecnifibre">
+                                            <option value="TFight">TFight</option>
+                                            <option value="TF40">TF40</option>
+                                            <option value="T-Rebound">T-Rebound</option>
+                                            <option value="TF-X1">TF-X1</option>
+                                            <option value="T-Flash">T-Flash</option>
+                                            <option value="Airshaft">Airshaft</option>
+                                            <option value="Suprem">Suprem</option>
+                                            <option value="Dynergy">Dynergy</option>
+                                            <option value="Carboflex">Carboflex</option>
+                                            <option value="Tempo">Tempo</option>
+                                        </optgroup>
+                                        <optgroup label="Volkl">
+                                            <option value="V-Feel">V-Feel</option>
+                                            <option value="V-Cell">V-Cell</option>
+                                            <option value="C10 Pro">C10 Pro</option>
+                                            <option value="V1 Classic">V1 Classic</option>
+                                            <option value="Organix">Organix</option>
+                                            <option value="Power Bridge">Power Bridge</option>
+                                            <option value="V-Sense">V-Sense</option>
+                                            <option value="Classic V1">Classic V1</option>
+                                            <option value="Beast">Beast</option>
+                                            <option value="Super G">Super G</option>
+                                        </optgroup>
+                                        <option value="Custom1">Other (Enter Custom Racket Below)</option>
+                                    </select>
+                                    <br>
+                                    <input type="text" id="customRacket1" name="customRacket1"
+                                        placeholder="Enter Racket Details" style="display: none;">
+                                </div>
+                            </div>
+
+                            <!-- Player 2 Details -->
+                            <div class="player-details"
+                                style="flex: 1; display: flex; flex-direction: column; gap: 10px;">
+                                <div id="player2-details" class="player-box">
+                                    <label for="player2Name">Player 2 Full Name:</label>
+                                    <input type="text" id="player2Name" name="player2Name" required>
+                                    <label for="player2Age">Player 2 Age:</label>
+                                    <input type="number" id="player2Age" name="player2Age" required>
+
+                                    <label for="player2Gender">Player 2 Gender:</label>
+                                    <select id="player2Gender" name="player2Gender" required>
+                                        <option value="">Select Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+
+                                    <label for="player2Height">Player 2 Height:</label>
+                                    <div class="input-container">
+                                        <input type="number" id="player2Feet" name="player2Feet" placeholder="ft"
+                                            style="display:none;" min="0">
+                                        <input type="number" id="player2Inches" name="player2Inches" placeholder="in"
+                                            style="display:none;" min="0" max="11">
+                                        <input type="number" id="player2Height" name="player2Height" placeholder="cm"
+                                            required>
+                                        <select id="player2HeightUnit" name="player2HeightUnit"
+                                            onchange="updateHeightInput('player2')" required>
+                                            <option value="cm">cm</option>
+                                            <option value="ft">ft-in</option>
+                                        </select>
+                                    </div>
+
+                                    <label for="player2DominantHand">Dominant Hand:</label>
+                                    <select id="player2DominantHand" name="player2DominantHand" required>
+                                        <option value="">Select Dominant Hand</option>
+                                        <option value="left">Left</option>
+                                        <option value="right">Right</option>
+                                        <option value="ambidextrous">Ambidextrous</option>
+                                    </select>
+
+                                    <label for="player2Racket">Racket Used for Match:</label>
+                                    <select id="player2Racket" name="player2Racket" onchange="checkCustomRacket(this)">
+                                        <option value="" disabled selected>Select Racket</option>
+                                        <optgroup label="Babolat">
+                                            <option value="Pure Drive">Pure Drive</option>
+                                            <option value="Pure Aero">Pure Aero</option>
+                                            <option value="Pure Strike">Pure Strike</option>
+                                            <option value="Boost">Boost</option>
+                                            <option value="Evo Drive">Evo Drive</option>
+                                            <option value="Drive Max">Drive Max</option>
+                                            <option value="Aero Pro Drive">Aero Pro Drive</option>
+                                            <option value="Strike VS">Strike VS</option>
+                                            <option value="Aero Tour">Aero Tour</option>
+                                            <option value="Reakt">Reakt</option>
+                                        </optgroup>
+                                        <optgroup label="Head">
+                                            <option value="Prestige">Prestige</option>
+                                            <option value="Speed">Speed</option>
+                                            <option value="Radical">Radical</option>
+                                            <option value="Gravity">Gravity</option>
+                                            <option value="Extreme">Extreme</option>
+                                            <option value="Boom">Boom</option>
+                                            <option value="Instinct">Instinct</option>
+                                            <option value="Ti.S6">Ti.S6</option>
+                                            <option value="Challenge">Challenge</option>
+                                            <option value="PWR Series">PWR Series</option>
+                                        </optgroup>
+                                        <optgroup label="Wilson">
+                                            <option value="Blade">Blade</option>
+                                            <option value="Pro Staff">Pro Staff</option>
+                                            <option value="Clash">Clash</option>
+                                            <option value="Ultra">Ultra</option>
+                                            <option value="Burn">Burn</option>
+                                            <option value="Triad">Triad</option>
+                                            <option value="Tempest">Tempest</option>
+                                            <option value="K Factor">K Factor</option>
+                                            <option value="Hammer">Hammer</option>
+                                            <option value="Profile">Profile</option>
+                                        </optgroup>
+                                        <optgroup label="Yonex">
+                                            <option value="Ezone">Ezone</option>
+                                            <option value="VCORE">VCORE</option>
+                                            <option value="VCORE Pro">VCORE Pro</option>
+                                            <option value="Percept">Percept</option>
+                                            <option value="Astrel">Astrel</option>
+                                            <option value="Nanoray">Nanoray</option>
+                                            <option value="Arcsaber">Arcsaber</option>
+                                            <option value="Rexking">Rexking</option>
+                                            <option value="RDS">RDS</option>
+                                            <option value="Ultimum">Ultimum</option>
+                                        </optgroup>
+                                        <optgroup label="Tecnifibre">
+                                            <option value="TFight">TFight</option>
+                                            <option value="TF40">TF40</option>
+                                            <option value="T-Rebound">T-Rebound</option>
+                                            <option value="TF-X1">TF-X1</option>
+                                            <option value="T-Flash">T-Flash</option>
+                                            <option value="Airshaft">Airshaft</option>
+                                            <option value="Suprem">Suprem</option>
+                                            <option value="Dynergy">Dynergy</option>
+                                            <option value="Carboflex">Carboflex</option>
+                                            <option value="Tempo">Tempo</option>
+                                        </optgroup>
+                                        <optgroup label="Volkl">
+                                            <option value="V-Feel">V-Feel</option>
+                                            <option value="V-Cell">V-Cell</option>
+                                            <option value="C10 Pro">C10 Pro</option>
+                                            <option value="V1 Classic">V1 Classic</option>
+                                            <option value="Organix">Organix</option>
+                                            <option value="Power Bridge">Power Bridge</option>
+                                            <option value="V-Sense">V-Sense</option>
+                                            <option value="Classic V1">Classic V1</option>
+                                            <option value="Beast">Beast</option>
+                                            <option value="Super G">Super G</option>
+                                        </optgroup>
+                                        <option value="Custom2">Other (Enter Custom Racket Below)</option>
+                                    </select>
+                                    <br>
+                                    <input type="text" id="customRacket2" name="customRacket2"
+                                        placeholder="Enter Racket Details" style="display: none;">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button id="saveStatsButton" type="submit">Save Stats</button>
+                    </div>
+                </div>
+
+
+
+
+        </section>
+
+
+        <section class="section-bg-image" id="section_3">
+            <!-- Top Wave -->
+            <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#ffffff" d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z">
+                </path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 563 89 C 724.5 89 724.5 48 886 48 L 886 48 L 886 0 L 563 0 Z">
+                </path>
+                <path fill="rgba(255, 255, 255, 1)"
+                    d="M 885 48 C 1006.5 48 1006.5 67 1128 67 L 1128 67 L 1128 0 L 885 0 Z"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 1127 67 C 1196 67 1196 0 1265 0 L 1265 0 L 1265 0 L 1127 0 Z">
+                </path>
+            </svg>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-bg-image-block">
+                            <div class="coming-soon-content" style="padding: 40px; text-align: center;">
+                                <!-- Lock Icon (requires Font Awesome) -->
+                                <i class="fas fa-lock" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                                <h2>Coming Soon</h2>
+                                <p>⏳ Our Mobile App Is On Its Way. Stay Tuned! ⏳</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <svg viewBox="0 0 1265 144" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="rgba(255, 255, 255, 1)" d="M 0 40 C 164 40 164 20 328 20 L 328 20 L 328 0 L 0 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 327 20 C 445.5 20 445.5 89 564 89 L 564 89 L 564 0 L 327 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 563 89 C 724.5 89 724.5 48 886 48 L 886 48 L 886 0 L 563 0 Z"
+                    stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)"
+                    d="M 885 48 C 1006.5 48 1006.5 67 1128 67 L 1128 67 L 1128 0 L 885 0 Z" stroke-width="0"></path>
+                <path fill="rgba(255, 255, 255, 1)" d="M 1127 67 C 1196 67 1196 0 1265 0 L 1265 0 L 1265 0 L 1127 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 me-auto mb-5 mb-lg-0">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="../images/logo.png" class="navbar-brand-image img-fluid" alt="Advanced Tennis">
+                        <span class="navbar-brand-text">
+                            Advanced Tennis Foundation
+                            <small>By Congruent Tennis Model (CTM)</small>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-12">
+                    <h5 class="site-footer-title mb-4">Join Us</h5>
+
+                    <p class="d-flex border-bottom pb-3 mb-3 me-lg-3">
+                        <span>Mon-Fri</span>
+                        6:00 AM - 6:00 PM
+                    </p>
+
+                    <p class="d-flex me-lg-3">
+                        <span>Sat-Sun</span>
+                        6:30 AM - 8:30 PM
+                    </p>
+                    <br>
+                    <p class="copyright-text">Copyright © 2024 Advanced Tennis Foundation</p>
+                </div>
+
+                <div class="col-lg-2 col-12 ms-auto">
+                    <ul class="social-icon mt-lg-5 mt-3 mb-4">
+                        <li class="social-icon-item">
+                            <a href="https://www.instagram.com/advancedtennisbyctm"
+                                class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.facebook.com/groups/324160331562588/?ref=share&mibextid=NSMWBT"
+                                class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#81B29A" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/match-analysis.js"></script>
+
+    <script>
+        function updateHeightInput(player) {
+            const heightUnit = document.getElementById(`${player}HeightUnit`).value;
+            const feetInput = document.getElementById(`${player}Feet`);
+            const inchesInput = document.getElementById(`${player}Inches`);
+            const heightInput = document.getElementById(`${player}Height`);
+
+            if (heightUnit === 'ft') {
+                feetInput.style.display = 'inline-block';
+                inchesInput.style.display = 'inline-block';
+                heightInput.style.display = 'none';
+                feetInput.placeholder = 'ft';
+                inchesInput.placeholder = 'in';
+            } else {
+                feetInput.style.display = 'none';
+                inchesInput.style.display = 'none';
+                heightInput.style.display = 'inline-block';
+                heightInput.placeholder = 'cm';
+            }
+        }
+
+
+
+        function checkCustomRacket(selectElement) {
+            const selectedValue = selectElement.value;
+            const playerNumber = selectElement.id.replace("player", "").replace("Racket", ""); // Extracts "1" or "2"
+
+            const customInput = document.getElementById(`customRacket${playerNumber}`);
+
+            if (selectedValue.startsWith("Custom")) {
+                customInput.style.display = "block"; // Show custom input
+                customInput.focus(); // Focus input when it becomes visible
+            } else {
+                customInput.style.display = "none";
+                customInput.value = ""; // Clear input when predefined racket is selected
+            }
+        }
+    </script>
+
+</body>
+
+</html>
