@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
-const { connectDatabase, User } = require("./src/config");
+const { connectDatabase, User } = require("./src/config.js");
 
 const app = express();
 
