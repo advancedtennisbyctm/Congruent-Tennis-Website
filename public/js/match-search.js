@@ -18,6 +18,12 @@ document.getElementById('search-btn').addEventListener('click', async () => {
     const resultsContainer = document.getElementById('search-results');
     resultsContainer.innerHTML = '';
 
+
+    let scrollContent = document.createElement('div');
+    scrollContent.classList.add('scroll-content');
+    resultsContainer.appendChild(scrollContent);
+    
+
     const statsContainer = document.getElementById("detailed-num-stats");
     const timelineContainer = document.getElementById("matchtimeline-database")
 
@@ -31,6 +37,9 @@ document.getElementById('search-btn').addEventListener('click', async () => {
     timelineContainer.classList.remove("hidden");
 
 
+
+
+    
     
     if (!query) {
         resultsContainer.textContent = 'Please Enter A Search Query.';
@@ -55,6 +64,8 @@ document.getElementById('search-btn').addEventListener('click', async () => {
             resultsContainer.textContent ='❌ No Matches Found ❌';
             return;
         }
+
+        
 
         matches.forEach(stats => {
             const matchElement = document.createElement('div');
@@ -109,7 +120,7 @@ document.getElementById('search-btn').addEventListener('click', async () => {
 
 
                     
-                    <button class="back">Back</button>
+                    <button class="detailed-back-btn">Back</button>
                 </div>
                 <hr>
             `;
@@ -161,6 +172,8 @@ document.getElementById('search-btn').addEventListener('click', async () => {
 
                     `;
                 };
+
+
 
 
                 window.goBackToPlayers = function () {
@@ -315,7 +328,7 @@ document.getElementById('search-btn').addEventListener('click', async () => {
 
 
             // When 'Back' button is clicked
-            matchElement.querySelector('.back').addEventListener('click', () => {
+            matchElement.querySelector('.detailed-back-btn').addEventListener('click', () => {
                 // Show all match summaries again
                 document.querySelectorAll('.match-result .match-summary').forEach(el => el.style.display = 'block');
 
@@ -344,11 +357,14 @@ matchTimelineContainer.innerHTML = `
             });
 
             // Back button to show all matches again
-            matchElement.querySelector('.back').addEventListener('click', () => {
+            matchElement.querySelector('.detailed-back-btn').addEventListener('click', () => {
                 document.querySelectorAll('.match-result').forEach(el => el.style.display = 'block');
                 matchElement.querySelector('.match-summary').style.display = 'block';
                 matchElement.querySelector('.match-details').style.display = 'none';
             });
+
+            scrollContent.appendChild(matchElement);
+
         });
 
     } catch (error) {
