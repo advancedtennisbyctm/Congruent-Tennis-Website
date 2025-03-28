@@ -103,7 +103,7 @@ app.get("/home", isAuthenticated, (req, res, next) => {
     res.sendFile(path.resolve(__dirname, "../public/home.html"));
 });
 
-const { MailingList } = require("./config"); // Adjust the path if needed
+const { MailingList } = require("./src/config.js");
 app.post("/newsletter", async (req, res) => {
     try {
         const { email } = req.body;
@@ -126,7 +126,7 @@ app.post("/newsletter", async (req, res) => {
     }
 });
 
-const { ContactUs } = require("./config"); // Import your ContactUs model
+const { ContactUs } = require("./src/config.js");
 
 app.post("/contactus", async (req, res) => {
     try {
@@ -147,7 +147,7 @@ app.post("/contactus", async (req, res) => {
         res.status(500).json({ errorMessage: "❌ An Unexpected Error Occurred. Please Try Again Later." });
     }
 });
-const { PlayerStats } = require('./config');
+const { PlayerStats } = require("./src/config.js");
 
 function generateMatchId() {
     const today = new Date();
