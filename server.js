@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 
+
 const express = require("express");
 const path = require("path");
 const bcrypt = require("bcrypt");
@@ -10,98 +11,98 @@ const { connectDatabase, User } = require("./src/config.js");
 const app = express();
 
 // Connect to the database
-connectDatabase(); // Establish the database connection
+connectDatabase();
 
-// Middleware for parsing JSON and URL-encoded data
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-// Middleware for session management
 app.use(session({
     secret: process.env.SESSION_SECRET || "default_secret",
     resave: false,
     saveUninitialized: false,
     cookie: { secure: false }
 }));
-
-// Disable caching during development
 app.use((req, res, next) => {
     res.setHeader("Cache-Control", "no-store");
     next();
 });
 
-// Serve static files
-app.use(express.static("public"));
-app.set("view engine", "ejs");
+// Serve static files (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, "public")));
 
-// Authentication Middleware
+// Authentication middleware
 function isAuthenticated(req, res, next) {
-    if (req.session && req.session.userId) {
-        return next(); // User is authenticated, proceed to the next middleware
-    } else {
-        return res.redirect("/"); // User is not authenticated, redirect to login page
-    }
+    if (req.session && req.session.user) return next();
+    return res.redirect("/");
 }
 
 // Routes
-app.get("/", (req, res) => res.render("login"));
-app.get("/signup", (req, res) => res.render("signup"));
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "index.html")); // Serve main page
+});
 
-app.post("/signup", async (req, res, next) => {
+// Signup
+app.post("/signup", async (req, res) => {
     try {
         const { firstName, lastName, email, username, password } = req.body;
 
-        // Check if user already exists
         const existingUser = await User.findOne({ $or: [{ email }, { username }] });
         if (existingUser) {
-            return res.status(400).json({
-                errorMessage: "❌ Email or Username Already Taken",
-            });
+            return res.status(400).json({ errorMessage: "❌ Email or Username Already Taken" });
         }
 
-        // Hash the password and create a new user
         const hashedPassword = await bcrypt.hash(password, 10);
         await User.create({ firstName, lastName, email, username, password: hashedPassword });
 
-        // Send a success response
-        res.status(200).json({ message: "✅ Signup Successful! Welcome To The Foundation" });
+        res.status(200).json({ message: "✅ Signup Successful!" });
     } catch (error) {
         console.error("Signup Error:", error);
-        res.status(500).json({ errorMessage: "An unexpected error occurred. Please try again ⏳" });
+        res.status(500).json({ errorMessage: "Unexpected error. Please try again later." });
     }
 });
 
-
-
-app.post("/login", async (req, res, next) => {
+// Login
+app.post("/login", async (req, res) => {
     try {
-        const user = await User.findOne({ username: req.body.username });
+        const { username, password } = req.body;
+        const user = await User.findOne({ username });
         if (!user) return res.status(404).send("Username not found.");
-        const isPasswordMatch = await bcrypt.compare(req.body.password, user.password);
-        if (!isPasswordMatch) return res.status(401).send("Incorrect password.");
-        req.session.userId = user._id;
-        res.redirect("/home");
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) return res.status(401).send("Incorrect password.");
+
+        req.session.user = {
+            id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName
+        };
+
+        res.redirect("/"); // Reload index.html with session active
     } catch (error) {
         console.error("Login Error:", error);
-        next(error);
+        res.status(500).send("Login failed.");
     }
 });
 
-
-app.post("/logout", (req, res) => {
-    req.session.destroy((err) => {
+// Logout
+app.get("/logout", (req, res) => {
+    req.session.destroy(err => {
         if (err) {
             console.error("Logout Error:", err);
-            return res.status(500).send("Error logging out.");
+            return res.status(500).send("Logout failed.");
         }
         res.redirect("/");
     });
 });
 
-// Home route with authentication middleware
-app.get("/home", isAuthenticated, (req, res, next) => {
-    res.sendFile(path.resolve(__dirname, "../public/home.html"));
+// Session check
+app.get("/session", (req, res) => {
+    if (req.session.user) {
+        return res.json({ loggedIn: true, user: req.session.user });
+    }
+    return res.json({ loggedIn: false });
 });
+
 
 const { MailingList } = require("./src/config.js");
 app.post("/newsletter", async (req, res) => {

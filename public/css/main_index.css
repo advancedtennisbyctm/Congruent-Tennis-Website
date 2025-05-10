@@ -1481,3 +1481,34 @@ strong {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-logout-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0;
+  list-style: none;
+  z-index: 9999;
+  min-width: 100px;
+}
+
+.logout-item {
+  display: block;
+  padding: 10px;
+  color: #000;
+  text-decoration: none;
+}
+
+.logout-item:hover {
+  background-color: #f5f5f5;
+}

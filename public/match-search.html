@@ -44,10 +44,6 @@
                     </span>
                 </a>
 
-                <div class="d-lg-none ms-auto me-3">
-                    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
-                        role="button" aria-controls="offcanvasExample">Member Login</a>
-                </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,15 +76,17 @@
                             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                 <li><a class="dropdown-item" href="match-analysis.html">Tennis Match Analysis</a></li>
 
-                                <li><a class="dropdown-item" href="match-search.html">Past Match Database Search</a></li>
+                                <li><a class="dropdown-item" href="match-search.html">Past Match Database Search</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
 
-                    <div class="d-none d-lg-block ms-lg-3">
-                        <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
-                            role="button" aria-controls="offcanvasExample">Member Login</a>
-                    </div>
+                <div class="d-none d-lg-block ms-lg-3" id="login-area">
+    <!-- Default button, replaced by script.js if user is logged in -->
+    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+        role="button" aria-controls="offcanvasExample">Member Login</a>
+</div>
                 </div>
             </div>
         </nav>
@@ -167,7 +165,8 @@
                         <h1 class="text-white mb-4 pb-2">Past Match Database Search</h1>
 
                         <div class="button-container">
-                            <a href="match-analysis.html" class="btn custom-btn smoothscroll" id="match-analysis-btn">Record A Match</a>
+                            <a href="match-analysis.html" class="btn custom-btn smoothscroll"
+                                id="match-analysis-btn">Record A Match</a>
                             <div class="vertical-line"></div>
                             <div id="main-screen">
                                 <select id="search-type">
@@ -222,7 +221,7 @@
                 <div id="matchtimeline-database" class="hidden">
                     <h3 id="timeline-label">Match Timeline</h3>
 
-                    
+
                 </div>
 
             </div>

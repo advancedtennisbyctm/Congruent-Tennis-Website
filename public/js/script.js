@@ -1,3 +1,45 @@
+
+if (window.innerWidth < 1024) {
+    alert("📢 For full functionality, please enable desktop mode in your browser.");
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    fetch("/session")
+        .then(res => res.json())
+        .then(data => {
+            const loginArea = document.getElementById("login-area");
+            if (!loginArea) {
+                console.warn("Login area not found on this page.");
+                return;
+            }
+
+            if (data.loggedIn && data.user) {
+                loginArea.innerHTML = `
+                    <div class="dropdown user-dropdown">
+                        <button class="btn custom-btn dropdown-toggle" id="userDropdown">
+                            ${data.user.firstName} ${data.user.lastName}
+                        </button>
+                        <ul class="dropdown-menu custom-logout-menu" id="logoutMenu">
+                            <li><a class="dropdown-item logout-item" href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                `;
+
+                const dropdown = document.querySelector(".user-dropdown");
+                const menu = document.getElementById("logoutMenu");
+
+                dropdown.addEventListener("mouseenter", () => {
+                    menu.style.display = "block";
+                });
+                dropdown.addEventListener("mouseleave", () => {
+                    menu.style.display = "none";
+                });
+            }
+        })
+        .catch(err => console.error("Session fetch error:", err));
+});
+
+
 document.getElementById("newsletterForm").addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent the page from reloading on form submission
 
@@ -29,6 +71,11 @@ document.getElementById("newsletterForm").addEventListener("submit", async funct
         messageDiv.style.color = "red";
     }
 });
+
+
+
+
+
 
 document.getElementById("signupForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent the default form submission

@@ -720,6 +720,77 @@ strong {
 }
 
 /*---------------------------------------
+  CUSTOM FORM               
+-----------------------------------------*/
+.custom-form .form-control {
+  border-radius: var(--border-radius-large);
+  border-width: 2px;
+  box-shadow: none;
+  color: var(--p-color);
+  margin-bottom: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  outline: none;
+}
+
+.custom-form .form-control:focus,
+.custom-form .form-control:hover {
+  border-color: var(--dark-color);
+}
+
+.form-floating>label {
+  padding-left: 20px;
+}
+
+.custom-form button[type="submit"] {
+  background: var(--secondary-color);
+  border: 2px solid var(--custom-btn-bg-color); /* Add border width */
+  border-radius: var(--border-radius-large);
+  color: var(--custom-btn-bg-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-bold);
+  transition: all 0.3s;
+  margin-bottom: 0;
+  padding-left: 10px;
+}
+
+
+.custom-form button[type="submit"]:hover,
+.custom-form button[type="submit"]:focus {
+  background: var(--custom-btn-bg-color);
+  color: var(--secondary-color);
+  font-size: var(--p-font-size);
+  font-weight: var(--font-weight-bold);
+  border-color: transparent;
+}
+
+.form-label {
+  font-size: 18px; /* Increase the font size */
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 5px; /* Keep the spacing consistent */
+  display: block; /* Ensures it behaves like a block element */
+  color: #000000; /* Optional: Adjust text color for better visibility */
+}
+
+
+
+.header-form {
+  position: relative;
+}
+
+.header-form .form-control {
+  padding-left: 42px;
+}
+
+.header-form-icon {
+  width: 24px;
+  position: absolute;
+  top: 0;
+  margin: 12px;
+  margin-left: 15px;
+}
+
+/*---------------------------------------
   SITE FOOTER            
 -----------------------------------------*/
 .site-footer {
