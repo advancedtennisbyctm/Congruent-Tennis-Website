@@ -249,6 +249,28 @@
             </div>
         </div>
 
+        <!-- Comment Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <form id="comment-form">
+        <div class="modal-header">
+          <h5 class="modal-title" id="commentModalLabel">Leave a Comment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" name="comment_author" class="form-control mb-3" placeholder="Your name" required>
+          <textarea name="comment_text" class="form-control" placeholder="Write your comment..." required></textarea>
+          <input type="hidden" name="article_id" id="comment-article-id">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 
 
         <!-- PDF Modal -->

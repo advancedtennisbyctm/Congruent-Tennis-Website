@@ -62,6 +62,8 @@ function loadArticles() {
 ${article.image_data ? `<img src="${API_BASE}/article/image/${article._id}" class="img-fluid mb-3" style="max-width:100%; max-height:300px; object-fit:cover;">` : ''}
           <p>${article.summary || ''}</p>
 <button class="btn custom-btn" onclick="openPdfModal('/article/pdf/${article._id}', '${article.title}')">Read More</button>
+      <button class="btn  custom-btn" onclick="openCommentModal('${article._id}')">Comment</button>
+
         `;
                 forum.appendChild(card);
             });
@@ -85,3 +87,36 @@ function openPdfModal(pdfUrl, title) {
     label.textContent = title;
     modal.show();
 }
+
+function openCommentModal(articleId) {
+    document.getElementById("comment-article-id").value = articleId;
+    const modal = new bootstrap.Modal(document.getElementById("commentModal"));
+    modal.show();
+}
+
+document.getElementById("comment-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const articleId = formData.get("article_id");
+    const author = formData.get("comment_author");
+    const text = formData.get("comment_text");
+
+    fetch(`${API_BASE}/articles/${articleId}/comments`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ author, text })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.success) {
+            this.reset();
+            bootstrap.Modal.getInstance(document.getElementById("commentModal")).hide();
+            alert("✅ Comment posted!");
+        }
+    })
+    .catch(err => {
+        console.error("Failed to post comment:", err);
+        alert("❌ Failed to post comment.");
+    });
+});

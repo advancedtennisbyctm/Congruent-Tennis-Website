@@ -455,6 +455,23 @@ app.get("/article/image/:id", async (req, res) => {
   res.send(Buffer.from(article.image_data.content, "base64"));
 });
 
+app.post('/articles/:id/comments', async (req, res) => {
+  try {
+    const { author, text } = req.body;
+    const { id } = req.params;
+
+    const article = await Article.findById(id);
+    if (!article) return res.status(404).json({ error: "Article not found" });
+
+    article.comments.push({ author, text });
+    await article.save();
+
+    res.status(200).json({ success: true, comments: article.comments });
+  } catch (err) {
+    console.error("Comment save error:", err);
+    res.status(500).json({ error: "Server error while saving comment" });
+  }
+});
 
 app.get("/articles", async (req, res) => {
     try {
