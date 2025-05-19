@@ -1,11 +1,13 @@
-
+const API_BASE = window.location.hostname.includes("localhost") ?
+    "http://localhost:5000" :
+    "https://congruent-tennis-website.onrender.com";
 
 document.getElementById("upload-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const formData = new FormData(this);
 
-    fetch("/upload_article", {
+    fetch(`${API_BASE}/upload_article`, {
             method: "POST",
             body: formData
         })
@@ -41,7 +43,7 @@ function loadArticles() {
         return;
     }
 
-    fetch('/articles')
+    fetch(`${API_BASE}/articles`)
         .then(res => res.json())
         .then(articles => {
             forum.innerHTML = ''; // Clear existing content
@@ -79,7 +81,7 @@ function openPdfModal(pdfUrl, title) {
     const viewer = document.getElementById("pdfViewer");
     const label = document.getElementById("pdfModalLabel");
 
-    viewer.src = pdfUrl;
+    viewer.src = `${API_BASE}${pdfUrl}`;
     label.textContent = title;
     modal.show();
 }
