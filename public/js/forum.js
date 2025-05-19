@@ -59,9 +59,9 @@ function loadArticles() {
                 card.innerHTML = `
           <h3>${article.title}</h3>
           <p><strong>By:</strong> ${article.author} | <strong>Date:</strong> ${new Date(article.date).toLocaleDateString()}</p>
-            ${article.image_path ? `<img src="${article.image_path}" class="img-fluid mb-3" style="max-width:100%; max-height:300px; object-fit:cover;">` : ''}
+${article.image_data ? `<img src="${API_BASE}/article/image/${article._id}" class="img-fluid mb-3" style="max-width:100%; max-height:300px; object-fit:cover;">` : ''}
           <p>${article.summary || ''}</p>
-<button class="btn custom-btn" onclick="openPdfModal('${article.article_path}', '${article.title}')">Read More</button>
+<button class="btn custom-btn" onclick="openPdfModal('/article/pdf/${article._id}', '${article.title}')">Read More</button>
         `;
                 forum.appendChild(card);
             });

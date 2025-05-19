@@ -71,12 +71,20 @@ const ContactUs = mongoose.model("ContactUs", contactUsSchema)
 
 
 const articleSchema = new mongoose.Schema({
-    title: String,
-    author: String,
-    summary: String,
-    article_path: String,
-    image_path: String,
-    date: { type: Date, default: Date.now }
+  title: String,
+  author: String,
+  summary: String,
+  article_data: {
+    content: String, // base64 PDF
+    mimetype: String,
+    filename: String
+  },
+  image_data: {
+    content: String, // base64 image
+    mimetype: String,
+    filename: String
+  },
+  date: { type: Date, default: Date.now }
 });
 
 const Article = mongoose.model("Article", articleSchema);

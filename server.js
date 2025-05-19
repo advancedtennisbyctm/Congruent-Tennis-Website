@@ -393,60 +393,67 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
 const multer = require('multer');
 
+const upload = multer({ storage: multer.memoryStorage() });
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'public/uploads/');
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + '-' + file.originalname);
-    }
-});
-const upload = multer({
-    storage
-});
 
 app.post('/upload_article', upload.fields([
   { name: 'article_file', maxCount: 1 },
   { name: 'image_file', maxCount: 1 }
 ]), async (req, res) => {
   try {
-    console.log("📦 Files received:", req.files);      // <-- Add this
-    console.log("📝 Form body received:", req.body);   // <-- And this
-
     const { title, author, summary } = req.body;
 
     if (!req.files || !req.files['article_file']) {
-      return res.status(400).json({
-        success: false,
-        error: "Missing article_file"
-      });
+      return res.status(400).json({ success: false, error: "Missing article_file" });
     }
 
-    const imageFilename = req.files['image_file']?.[0]?.filename || null;
-    const articleFilename = req.files['article_file'][0].filename;
+    const articleBuffer = req.files['article_file'][0].buffer;
+    const imageBuffer = req.files['image_file']?.[0]?.buffer || null;
 
-    const imagePath = imageFilename ? `/uploads/${imageFilename}` : null;
-    const articlePath = `/uploads/${articleFilename}`;
+    const articleBase64 = articleBuffer.toString('base64');
+    const imageBase64 = imageBuffer ? imageBuffer.toString('base64') : null;
 
     const newArticle = new Article({
       title,
       author,
       summary,
-      article_path: articlePath,
-      image_path: imagePath
+      article_data: {
+        content: articleBase64,
+        mimetype: req.files['article_file'][0].mimetype,
+        filename: req.files['article_file'][0].originalname
+      },
+      image_data: imageBase64 ? {
+        content: imageBase64,
+        mimetype: req.files['image_file'][0].mimetype,
+        filename: req.files['image_file'][0].originalname
+      } : null
     });
 
     await newArticle.save();
-
     res.json({ success: true });
-
   } catch (err) {
-    console.error("🔥 Upload error:", err); // Shows full stack trace
+    console.error("🔥 Upload error:", err);
     res.status(500).json({ success: false, error: err.message });
   }
 });
 
+// Return PDF
+app.get("/article/pdf/:id", async (req, res) => {
+  const article = await Article.findById(req.params.id);
+  if (!article || !article.article_data) return res.status(404).send("PDF not found");
+
+  res.contentType(article.article_data.mimetype);
+  res.send(Buffer.from(article.article_data.content, "base64"));
+});
+
+// Return Image
+app.get("/article/image/:id", async (req, res) => {
+  const article = await Article.findById(req.params.id);
+  if (!article || !article.image_data) return res.status(404).send("Image not found");
+
+  res.contentType(article.image_data.mimetype);
+  res.send(Buffer.from(article.image_data.content, "base64"));
+});
 
 
 app.get("/articles", async (req, res) => {
