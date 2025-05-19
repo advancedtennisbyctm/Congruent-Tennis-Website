@@ -9,8 +9,10 @@ const session = require("express-session");
 
 const {
     connectDatabase,
-    User
+    User,
+    Article
 } = require("./src/config.js");
+
 
 const app = express();
 
@@ -404,65 +406,49 @@ const upload = multer({
     storage
 });
 
-app.post('/upload_article', upload.fields([{
-        name: 'article_file',
-        maxCount: 1
-    },
-    {
-        name: 'image_file',
-        maxCount: 1
-    }
+app.post('/upload_article', upload.fields([
+  { name: 'article_file', maxCount: 1 },
+  { name: 'image_file', maxCount: 1 }
 ]), async (req, res) => {
-    try {
+  try {
+    console.log("📦 Files received:", req.files);      // <-- Add this
+    console.log("📝 Form body received:", req.body);   // <-- And this
 
+    const { title, author, summary } = req.body;
 
-        const {
-            title,
-            author,
-            summary
-        } = req.body;
-
-        if (!req.files || !req.files['article_file']) {
-            return res.status(400).json({
-                success: false,
-                error: "Missing article_file"
-            });
-        }
-
-const imageFilename = req.files['image_file']?.[0]?.filename || null;
-const articleFilename = req.files['article_file'][0].filename;
-
-const imagePath = imageFilename ? `/uploads/${imageFilename.replace(/\\/g, '/')}` : null;
-const articlePath = `/uploads/${articleFilename.replace(/\\/g, '/')}`;
-
-
-        const newArticle = new Article({
-            title,
-            author,
-            summary,
-            article_path: articlePath,
-            image_path: imagePath
-        });
-
-
-
-        await newArticle.save();
-
-        res.json({
-            success: true
-        });
-    } catch (err) {
-        console.error("🔥 Save error:", err);
-        res.status(500).json({
-            success: false,
-            error: err.message
-        });
+    if (!req.files || !req.files['article_file']) {
+      return res.status(400).json({
+        success: false,
+        error: "Missing article_file"
+      });
     }
+
+    const imageFilename = req.files['image_file']?.[0]?.filename || null;
+    const articleFilename = req.files['article_file'][0].filename;
+
+    const imagePath = imageFilename ? `/uploads/${imageFilename}` : null;
+    const articlePath = `/uploads/${articleFilename}`;
+
+    const newArticle = new Article({
+      title,
+      author,
+      summary,
+      article_path: articlePath,
+      image_path: imagePath
+    });
+
+    await newArticle.save();
+
+    res.json({ success: true });
+
+  } catch (err) {
+    console.error("🔥 Upload error:", err); // Shows full stack trace
+    res.status(500).json({ success: false, error: err.message });
+  }
 });
 
-const {
-    Article
-} = require("./src/config.js")
+
+
 app.get("/articles", async (req, res) => {
     try {
         const articles = await Article.find().sort({
