@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tennis Match Analysis | Advanced Tennis Foundation By CTM</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/match-search.css" rel="stylesheet">
+
+
+    <!--
+
+-->
+</head>
+
+<body>
+
+    <main>
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="../images/logo.png" class="navbar-brand-image img-fluid" alt="Advanced Tennis">
+                    <span class="navbar-brand-text">
+                        Advanced Tennis Foundation
+                        <small>By Congruent Tennis Model (CTM)</small>
+                    </span>
+                </a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_3">Membership</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="index.html#section_4">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="match-analysis.html">Tennis Match Analysis</a></li>
+
+                                <li><a class="dropdown-item" href="match-search.html">Past Match Database Search</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="d-none d-lg-block ms-lg-3" id="login-area">
+                        <!-- Default button, replaced by script.js if user is logged in -->
+                        <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                            role="button" aria-controls="offcanvasExample">Member Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Member Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body d-flex flex-column">
+                <!-- Form action points to the login route -->
+                <form action="/login" method="POST" class="custom-form">
+                    <div class="form-group mb-4">
+                        <!-- Username Input -->
+                        <label for="name" class="form-label">Username:</label>
+                        <input type="text" id="name" name="username" class="form-control" required autocomplete="off">
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <!-- Password Input -->
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn form-control">Login</button>
+                </form>
+
+
+                <!-- Contact Info Section -->
+                <div class="mt-auto mb-5">
+                    <p>
+                        <strong class="text-white me-3">Any Questions?</strong>
+                        <a href="tel:010-020-0340" class="contact-link">010-020-0340</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Offcanvas Footer Design -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#3D405B" fill-opacity="1"
+                    d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+
+
+        <section class="hero-section hero-50 d-flex justify-content-center align-items-center" id="section_1">
+
+            <div class="section-overlay"></div>
+
+            <svg viewBox="0 0 1962 178" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="#3D405B" d="M 0 114 C 118.5 114 118.5 167 237 167 L 237 167 L 237 0 L 0 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 236 167 C 373 167 373 128 510 128 L 510 128 L 510 0 L 236 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 509 128 C 607 128 607 153 705 153 L 705 153 L 705 0 L 509 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 704 153 C 812 153 812 113 920 113 L 920 113 L 920 0 L 704 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 919 113 C 1048.5 113 1048.5 148 1178 148 L 1178 148 L 1178 0 L 919 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 1177 148 C 1359.5 148 1359.5 129 1542 129 L 1542 129 L 1542 0 L 1177 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#3D405B" d="M 1541 129 C 1751.5 129 1751.5 138 1962 138 L 1962 138 L 1962 0 L 1541 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+
+                        <h1 class="text-white mb-4 pb-2">CTM Forum</h1>
+
+                        <div class="button-container">
+                            <button class="btn custom-btn smoothscroll" data-bs-toggle="modal"
+                                data-bs-target="#uploadArticleModal">Upload Article</button>
+
+                            <div class="vertical-line"></div>
+                            <div id="main-screen">
+                                <select id="search-type">
+                                    <option value="playerName">Player Name</option>
+                                    <option value="matchName">Match Name</option>
+                                    <option value="matchId">Match ID</option>
+                                    <option value="matchDate">Match Date</option>
+                                </select>
+                                <input type="text" id="search-query" placeholder="Search For Archived Matches" />
+                                <button id="search-btn" class="btn custom-btn">Search</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+            <svg viewBox="0 0 1962 89" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path fill="#ffffff" d="M 0 57 C 118.5 57 118.5 83.5 237 83.5 L 237 83.5 L 237 0 L 0 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 236 83.5 C 373 83.5 373 64 510 64 L 510 64 L 510 0 L 236 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 509 64 C 607 64 607 76.5 705 76.5 L 705 76.5 L 705 0 L 509 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 704 76.5 C 812 76.5 812 56.5 920 56.5 L 920 56.5 L 920 0 L 704 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 919 56.5 C 1048.5 56.5 1048.5 74 1178 74 L 1178 74 L 1178 0 L 919 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 1177 74 C 1359.5 74 1359.5 64.5 1542 64.5 L 1542 64.5 L 1542 0 L 1177 0 Z"
+                    stroke-width="0"></path>
+                <path fill="#ffffff" d="M 1541 64.5 C 1751.5 64.5 1751.5 69 1962 69 L 1962 69 L 1962 0 L 1541 0 Z"
+                    stroke-width="0"></path>
+            </svg>
+
+        </section>
+
+
+        <section class="events-section section-padding" id="section_2">
+            <div class="section2-container">
+                <div id="article-forum"></div>
+
+            </div>
+
+
+
+
+        </section>
+
+
+        <!-- Upload Article Modal -->
+        <div class="modal fade" id="uploadArticleModal" tabindex="-1" aria-labelledby="uploadArticleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Upload Article</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" name="title" class="form-control mb-2" placeholder="Title" required>
+                            <input type="text" name="author" class="form-control mb-2" placeholder="Author" required>
+                            <textarea name="summary" class="form-control mb-2"
+                                placeholder="Summary (optional)"></textarea>
+                            <input type="file" name="article_file" class="form-control mb-2" accept=".pdf,.txt"
+                                required>
+                            <input type="file" name="image_file" class="form-control mb-2" accept="image/*">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- PDF Modal -->
+<div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="pdfModalLabel">Article Preview</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe id="pdfViewer" style="width: 100%; height: 80vh;" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 me-auto mb-5 mb-lg-0">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="../images/logo.png" class="navbar-brand-image img-fluid" alt="Advanced Tennis">
+                        <span class="navbar-brand-text">
+                            Advanced Tennis Foundation
+                            <small>By Congruent Tennis Model (CTM)</small>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-12">
+                    <h5 class="site-footer-title mb-4">Join Us</h5>
+
+                    <p class="d-flex border-bottom pb-3 mb-3 me-lg-3">
+                        <span>Mon-Fri</span>
+                        6:00 AM - 6:00 PM
+                    </p>
+
+                    <p class="d-flex me-lg-3">
+                        <span>Sat-Sun</span>
+                        6:30 AM - 8:30 PM
+                    </p>
+                    <br>
+                    <p class="copyright-text">Copyright © 2024 Advanced Tennis Foundation</p>
+                </div>
+
+                <div class="col-lg-2 col-12 ms-auto">
+                    <ul class="social-icon mt-lg-5 mt-3 mb-4">
+                        <li class="social-icon-item">
+                            <a href="https://www.instagram.com/advancedtennisbyctm"
+                                class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="https://www.facebook.com/groups/324160331562588/?ref=share&mibextid=NSMWBT"
+                                class="social-icon-link bi-facebook"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#81B29A" fill-opacity="1"
+                d="M0,224L34.3,192C68.6,160,137,96,206,90.7C274.3,85,343,139,411,144C480,149,549,107,617,122.7C685.7,139,754,213,823,240C891.4,267,960,245,1029,224C1097.1,203,1166,181,1234,160C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/forum.js"></script>
+
+</body>
+
+</html>

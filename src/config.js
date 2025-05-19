@@ -68,6 +68,24 @@ const contactUsSchema = new mongoose.Schema({
 
 const ContactUs = mongoose.model("ContactUs", contactUsSchema)
 
+
+
+const articleSchema = new mongoose.Schema({
+    title: String,
+    author: String,
+    summary: String,
+    article_path: String,
+    image_path: String,
+    date: { type: Date, default: Date.now }
+});
+
+const Article = mongoose.model("Article", articleSchema);
+
+
+
+
+
+
 const playerStatsSchema = new mongoose.Schema({
     matchId: { type: String, required: true },
     matchName: { type: String, required: true },
@@ -128,5 +146,4 @@ playerStatsSchema.pre('save', function (next) {
 
 
 const PlayerStats = mongoose.model("PlayerStats", playerStatsSchema);
-
-module.exports = { connectDatabase, User, MailingList, ContactUs, PlayerStats };
+module.exports = { connectDatabase, User, MailingList, ContactUs, PlayerStats, Article };
