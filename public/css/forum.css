@@ -3,12 +3,119 @@
 }
 
 .comment-section {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-left: 4px solid #bbb;
+  background-color: var(--secondary-color);
+  border: 1px solid #ffffff;
+  border-left: 4px solid var(--custom-btn-bg-color);
   padding: 1rem;
   border-radius: 5px;
+      color: #fff;
+
 }
+
+.article-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.dropdown-toggle-wrapper {
+  margin-top: 10px;
+}
+
+.custom-dropdown-btn::after {
+  display: none !important;  /* Removes Bootstrap's default caret */
+}
+
+
+#upload-btn {
+    white-space: nowrap;  /* Prevent text from wrapping */
+    padding: 10px 20px;
+}
+
+
+
+/* Modal content */
+.modal-content {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: var(--border-radius-small);
+    padding: 20px 20px 14px 20px;
+    color: #fff;
+}
+
+/* Modal header spacing and title */
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0px;
+}
+
+.modal-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+/* Fix close button color (white ×) */
+.btn-close {
+    filter: invert(1); /* makes the icon white */
+    opacity: 1;
+}
+
+/* Input fields */
+.form-control {
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 0 0 1px #ccc inset;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #999;
+}
+
+/* Labels */
+.form-label {
+    font-size: 1rem;
+    color: #fff !important;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+/* Footer spacing */
+.modal-footer {
+    border-top: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -10px;
+}
+
+
+/* Hide default modal line separator */
+.modal-header,
+.modal-footer {
+    border-bottom: none !important;
+    border-top: none !important;
+}
+
+.reply-label {
+  font-weight: 600;
+  margin-bottom: 8px;  /* adds space between label and input */
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+
+.comment small.text-muted,
+.reply small.text-muted {
+  color: #ffffff !important; 
+}
+
 
 /*---------------------------------------
   CUSTOM PROPERTIES ( VARIABLES )             
@@ -411,8 +518,8 @@ strong {
 }
 
 .custom-btn:hover {
-    background: var(--custom-btn-bg-hover-color);
-    color: var(--white-color);
+    background: var(--custom-btn-bg-color);
+    color: var(--secondary-color);
 }
 
 .custom-border-btn {
@@ -683,7 +790,7 @@ strong {
     HERO        
   -----------------------------------------*/
 .hero-section {
-    background-image: url('../../images/background-splash-3.jpg');
+    background-image: url('../../images/background-splash-6.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

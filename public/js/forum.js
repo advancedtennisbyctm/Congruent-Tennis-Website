@@ -57,48 +57,57 @@ function loadArticles() {
                 const card = document.createElement('div');
                 card.className = 'article-card mb-5';
                 card.innerHTML = `
-          <h3>${article.title}</h3>
-          <p><strong>By:</strong> ${article.author} | <strong>Date:</strong> ${new Date(article.date).toLocaleDateString()}</p>
-${article.image_data ? `<img src="${API_BASE}/article/image/${article._id}" class="img-fluid mb-3" style="max-width:100%; max-height:300px; object-fit:cover;">` : ''}
-          <p>${article.summary || ''}</p>
-        <button class="btn custom-btn" onclick="openPdfModal('/article/pdf/${article._id}', '${article.title}')">Read More</button>
-      <button class="btn  custom-btn" onclick="openCommentModal('${article._id}')">Comment</button>
-<button class="btn btn-outline-dark dropdown-toggle" onclick="toggleCommentDropdown('${article._id}')">
-    View Comments (${article.comments?.length || 0})
-  </button>
+  <h3>${article.title}</h3>
+  <p><strong>By:</strong> ${article.author} | <strong>Date:</strong> ${new Date(article.date).toLocaleDateString()}</p>
+  ${article.image_data ? `<img src="${API_BASE}/article/image/${article._id}" class="img-fluid mb-3" style="max-width:100%; max-height:300px; object-fit:cover;">` : ''}
+  <p>${article.summary || ''}</p>
 
-  <div class="comment-dropdown mt-3 d-none" id="comments-${article._id}">
+  <div class="article-actions d-flex gap-2 mb-2">
+    <button class="btn custom-btn" onclick="openPdfModal('/article/pdf/${article._id}', '${article.title}')">Read More</button>
+    <button class="btn custom-btn" onclick="openCommentModal('${article._id}')">Comment</button>
+  </div>
+
+  <div class="dropdown-toggle-wrapper mb-3">
+    <button class="btn custom-dropdown-btn" onclick="toggleCommentDropdown('${article._id}')">
+      View Comments (${article.comments?.length || 0}) <span id="arrow-${article._id}">◄</span>
+    </button>
+  </div>
+
+  <div class="comment-dropdown d-none" id="comments-${article._id}">
     <div class="card card-body comment-section" id="comment-list-${article._id}">
-      ${article.comments?.length > 0
-        ? article.comments.map(c => `
-          <div class="comment mb-2">
-            <strong>${c.author}</strong> <small class="text-muted">${new Date(c.date).toLocaleString()}</small>
-            <p class="mb-0">${c.text}</p>
-          
-      ${c.replies?.length > 0
-        ? `<div class="ms-4 mt-2">
-            ${c.replies.map(r => `
-              <div class="reply mb-2 ps-3 border-start">
-                <strong>${r.author}</strong> <small class="text-muted">${new Date(r.date).toLocaleString()}</small>
-                <p class="mb-0">${r.text}</p>
+      ${
+        article.comments?.length > 0
+          ? article.comments.map(c => `
+            <div class="comment mb-4 pb-3 border-bottom">
+              <strong>${c.author}</strong> <small class="text-muted">${new Date(c.date).toLocaleString()}</small>
+              <p class="mb-2">${c.text}</p>
+
+              ${
+                c.replies?.length > 0
+                  ? `<div class="ms-4 mt-2">
+                      ${c.replies.map(r => `
+                        <div class="reply mb-3 ps-3 border-start">
+                          <strong>${r.author}</strong> <small class="text-muted">${new Date(r.date).toLocaleString()}</small>
+                          <p class="mb-2">${r.text}</p>
+                        </div>
+                      `).join('')}
+                    </div>` : ''
+              }
+
+              <div class="reply-form-block mt-3">
+                <label class="reply-label" >Reply</label>
+                <input type="text" class="form-control form-control-sm mb-2" placeholder="Your name" id="reply-author-${article._id}-${c._id}">
+                <input type="text" class="form-control form-control-sm mb-2" placeholder="Write a reply..." id="reply-text-${article._id}-${c._id}">
+                <button class="btn custom-btn" onclick="submitReply('${article._id}', '${c._id}')">Reply</button>
               </div>
-            `).join('')}
-          </div>` : ''
+            </div>
+          `).join('')
+          : '<p class="text-muted">No comments yet.</p>'
       }
-
-      <div class="ms-4 mt-2">
-        <input type="text" class="form-control form-control-sm mb-1" placeholder="Your name" id="reply-author-${article._id}-${c._id}">
-        <input type="text" class="form-control form-control-sm mb-1" placeholder="Write a reply..." id="reply-text-${article._id}-${c._id}">
-        <button class="btn custom-btn" onclick="submitReply('${article._id}', '${c._id}')">Reply</button>
-      </div>
-    </div>
-  `).join('')
-  : '<p class="text-muted">No comments yet.</p>'
-      }
-
     </div>
   </div>
-        `;
+`;
+
                 forum.appendChild(card);
             });
         })
@@ -111,9 +120,14 @@ ${article.image_data ? `<img src="${API_BASE}/article/image/${article._id}" clas
 
 function toggleCommentDropdown(articleId) {
     const dropdown = document.getElementById(`comments-${articleId}`);
-    dropdown.classList.toggle("d-none");
-}
+    const arrow = document.getElementById(`arrow-${articleId}`);
 
+    const isHidden = dropdown.classList.contains("d-none");
+    dropdown.classList.toggle("d-none");
+
+    // Update arrow
+    arrow.textContent = isHidden ? "▼" : "◄";
+}
 document.addEventListener("DOMContentLoaded", loadArticles);
 
 

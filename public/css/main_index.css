@@ -797,7 +797,6 @@ strong {
 -----------------------------------------*/
 .about-section {
   padding-bottom: 70px;
-  back
 }
 
 .member-block-image-wrap {
@@ -1511,4 +1510,9 @@ strong {
 
 .logout-item:hover {
   background-color: #f5f5f5;
+}
+
+
+#about-member-btn {
+  margin-top: -80px; 
 }

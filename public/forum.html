@@ -168,18 +168,17 @@
                         <h1 class="text-white mb-4 pb-2">CTM Articles</h1>
 
                         <div class="button-container">
-                            <button class="btn custom-btn smoothscroll" data-bs-toggle="modal"
-                                data-bs-target="#uploadArticleModal">Upload Article</button>
-
+                            <button id="upload-btn" class="btn custom-btn smoothscroll" data-bs-toggle="modal" data-bs-target="#uploadArticleModal">
+                        Upload Article
+    </button>
                             <div class="vertical-line"></div>
                             <div id="main-screen">
                                 <select id="search-type">
-                                    <option value="playerName">Player Name</option>
-                                    <option value="matchName">Match Name</option>
-                                    <option value="matchId">Match ID</option>
-                                    <option value="matchDate">Match Date</option>
+                                    <option value="articleTitle">Article Title</option>
+                                    <option value="author">Author</option>
+                                    <option value="publishedDate">Published Date</option>
                                 </select>
-                                <input type="text" id="search-query" placeholder="Search For Archived Matches" />
+                                <input type="text" id="search-query" placeholder="Search For CTM Articles" />
                                 <button id="search-btn" class="btn custom-btn">Search</button>
                             </div>
                         </div>
@@ -236,13 +235,15 @@
                             <input type="text" name="title" class="form-control mb-2" placeholder="Title" required>
                             <input type="text" name="author" class="form-control mb-2" placeholder="Author" required>
                             <textarea name="summary" class="form-control mb-2"
-                                placeholder="Summary (optional)"></textarea>
+                                placeholder="Summary (Optional)"></textarea>
+                            <label for="article-file" class="form-label">Upload Article File <small class="text-light">(PDF or TXT)</small></label>
                             <input type="file" name="article_file" class="form-control mb-2" accept=".pdf,.txt"
                                 required>
+                            <label for="image-file" class="form-label ">Cover Image <small class="text-light">(JPG, PNG, etc.)</small></label>
                             <input type="file" name="image_file" class="form-control mb-2" accept="image/*">
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary">Upload</button>
+                            <button type="submit" class="btn custom-btn">Upload</button>
                         </div>
                     </form>
                 </div>
@@ -259,12 +260,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <input type="text" name="comment_author" class="form-control mb-3" placeholder="Your name" required>
-          <textarea name="comment_text" class="form-control" placeholder="Write your comment..." required></textarea>
+          <input type="text" name="comment_author" class="form-control mb-3" placeholder="Your Name" required>
+          <textarea name="comment_text" class="form-control" placeholder="Write Your Comment" required></textarea>
           <input type="hidden" name="article_id" id="comment-article-id">
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Post Comment</button>
+          <button type="submit" class="btn custom-btn">Post Comment</button>
         </div>
       </form>
     </div>
