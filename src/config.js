@@ -71,7 +71,12 @@ const ContactUs = mongoose.model("ContactUs", contactUsSchema)
 const CommentSchema = new mongoose.Schema({
   author: String,
   text: String,
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  replies: [{
+    author: String,
+    text: String,
+    date: { type: Date, default: Date.now }
+  }]
 });
 
 const articleSchema = new mongoose.Schema({

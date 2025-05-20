@@ -473,20 +473,32 @@ app.post('/articles/:id/comments', async (req, res) => {
   }
 });
 
-app.get("/articles", async (req, res) => {
-    try {
-        const articles = await Article.find().sort({
-            date: -1
-        });
-        res.json(articles);
-    } catch (err) {
-        console.error("❌ Failed to fetch articles:", err);
-        res.status(500).json({
-            error: "Server error while fetching articles"
-        });
-    }
+app.post('/articles/:articleId/comments/:commentId/reply', async (req, res) => {
+  const { articleId, commentId } = req.params;
+  const { author, text } = req.body;
+
+  try {
+    const article = await Article.findById(articleId);
+    if (!article) return res.status(404).json({ error: "Article not found" });
+
+    const comment = article.comments.id(commentId);
+    if (!comment) return res.status(404).json({ error: "Comment not found" });
+
+    comment.replies.push({ author, text });
+    await article.save();
+
+    res.json({ success: true, comment });
+  } catch (err) {
+    console.error("Reply error:", err);
+    res.status(500).json({ error: "Failed to post reply" });
+  }
 });
 
+
+app.get("/articles", async (req, res) => {
+  const articles = await Article.find().sort({ date: -1 });
+  res.json(articles);
+});
 
 
 app.get("/search_articles", async (req, res) => {
