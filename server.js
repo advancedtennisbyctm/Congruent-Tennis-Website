@@ -501,36 +501,47 @@ app.get("/articles", async (req, res) => {
 });
 
 
-app.get("/search_articles", async (req, res) => {
-    const {
-        type,
-        query
-    } = req.query;
+app.get('/article-search', async (req, res) => {
+  const { type, query } = req.query;
+  let filter = {};
 
-    if (!type || !query) {
-        return res.status(400).json({
-            error: "Missing search parameters"
-        });
+  switch (type) {
+    case 'title':
+      filter = {
+        title: { $regex: query, $options: 'i' }
+      };
+      break;
+
+    case 'author':
+      filter = {
+        author: { $regex: query, $options: 'i' }
+      };
+      break;
+
+    case 'date':
+      const start = new Date(`${query}T00:00:00.000Z`);
+      const end = new Date(`${query}T23:59:59.999Z`);
+      filter = {
+        date: { $gte: start, $lte: end }
+      };
+      break;
+
+    default:
+      return res.status(400).json({ message: 'Invalid search type' });
+  }
+
+  try {
+    const results = await Article.find(filter).limit(20);
+    if (!results.length) {
+      return res.status(404).json({ message: 'No articles found' });
     }
-
-    const filter = {};
-    filter[type] = {
-        $regex: query,
-        $options: 'i'
-    };
-
-    try {
-        const results = await Article.find(filter).sort({
-            date: -1
-        });
-        res.json(results);
-    } catch (err) {
-        console.error("Search Error:", err);
-        res.status(500).json({
-            error: "Search failed"
-        });
-    }
+    res.status(200).json(results);
+  } catch (err) {
+    console.error('Article search error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
+
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

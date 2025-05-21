@@ -112,7 +112,7 @@
 
 
 .comment small.text-muted,
-.reply small.text-muted {
+.reply small.text-muted, .text-muted {
   color: #ffffff !important; 
 }
 
