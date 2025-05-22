@@ -1325,7 +1325,7 @@ strong {
     align-items: stretch; /* Make all child elements the same height */
     gap: 0; /* Remove any gap between children */
     width: 100%; /* Full width */
-    max-width: 1650px; /* Restrict the maximum width */
+    max-width: 1250px; /* Restrict the maximum width */
     margin: 0 auto; /* Center horizontally */
     padding: 20px; /* Add padding */
     box-sizing: border-box; /* Include padding in width calculations */

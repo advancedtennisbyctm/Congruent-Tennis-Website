@@ -58,6 +58,7 @@ async function loadArticles() {
   try {
     const res = await fetch(`${API_BASE}/articles`);
     const articles = await res.json();
+    articles.sort((a, b) => new Date(b.publishedDate) - new Date(a.publishedDate));
     renderArticles(articles); // render separately
     return articles;
   } catch (err) {
