@@ -71,11 +71,11 @@ const ContactUs = mongoose.model("ContactUs", contactUsSchema)
 const CommentSchema = new mongoose.Schema({
   author: String,
   text: String,
-  date: { type: Date, default: Date.now },
+  commentDate: { type: Date, default: Date.now },
   replies: [{
     author: String,
     text: String,
-    date: { type: Date, default: Date.now }
+    replyDate: { type: Date, default: Date.now }
   }]
 });
 
@@ -94,7 +94,7 @@ const articleSchema = new mongoose.Schema({
     filename: String
   },
     comments: [CommentSchema],
-  date: { type: Date, default: Date.now }
+  publishedDate: { type: Date, default: Date.now }
 });
 
 const Article = mongoose.model("Article", articleSchema);

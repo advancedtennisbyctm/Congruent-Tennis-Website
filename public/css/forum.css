@@ -1277,8 +1277,8 @@ strong {
 #search-query {
     border: none;
     padding: 12px;
-    width: 1000px;        /* Increased constant width */
-    max-width: 1000px;    /* Prevents it from growing beyond 800px */
+    width: 700px;        /* Increased constant width */
+    max-width: 700px;    /* Prevents it from growing beyond 800px */
     border-radius: 8px;
     background: var(--white-color);
     font-size: 14px;

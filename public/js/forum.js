@@ -35,6 +35,18 @@ document.getElementById("upload-form").addEventListener("submit", function (e) {
         });
 });
 
+document.getElementById("search-type").addEventListener("change", (e) => {
+  const queryInput = document.getElementById("search-query");
+  const selected = e.target.value;
+
+  if (selected === "date") {
+    queryInput.type = "date";
+    queryInput.placeholder = "";
+  } else {
+    queryInput.type = "text";
+    queryInput.placeholder = "Search For CTM Articles";
+  }
+});
 
 async function loadArticles() {
   const forum = document.getElementById('article-forum');
@@ -69,7 +81,7 @@ function renderArticles(articles) {
     card.className = 'article-card mb-5';
     card.innerHTML = `
       <h3>${article.title}</h3>
-      <p><strong>By:</strong> ${article.author} | <strong>Date:</strong> ${new Date(article.date).toLocaleDateString()}</p>
+      <p><strong>By:</strong> ${article.author} | <strong>Date:</strong> ${new Date(article.publishedDate).toLocaleDateString()}</p>
       ${article.image_data ? `<img src="${API_BASE}/article/image/${article._id}" class="img-fluid mb-3" style="max-width:100%; max-height:300px; object-fit:cover;">` : ''}
       <p>${article.summary || ''}</p>
       <div class="article-actions d-flex gap-2 mb-2">
@@ -86,13 +98,13 @@ function renderArticles(articles) {
           ${article.comments?.length > 0
             ? article.comments.map(c => `
                 <div class="comment mb-4 pb-3 border-bottom">
-                  <strong>${c.author}</strong> <small class="text-muted">${new Date(c.date).toLocaleString()}</small>
+                  <strong>${c.author}</strong> <small class="text-muted">${new Date(c.commentDate).toLocaleString()}</small>
                   <p class="mb-2">${c.text}</p>
                   ${c.replies?.length > 0
                     ? `<div class="ms-4 mt-2">
                         ${c.replies.map(r => `
                           <div class="reply mb-3 ps-3 border-start">
-                            <strong>${r.author}</strong> <small class="text-muted">${new Date(r.date).toLocaleString()}</small>
+                            <strong>${r.author}</strong> <small class="text-muted">${new Date(r.replyDate).toLocaleString()}</small>
                             <p class="mb-2">${r.text}</p>
                           </div>`).join('')}
                       </div>` : ''}
@@ -206,58 +218,69 @@ function submitReply(articleId, commentId) {
 }
 
 
+let allArticles = [];
+
+
+
 document.getElementById("search-article-btn").addEventListener("click", () => {
   const type = document.getElementById("search-type").value;
-  const query = document.getElementById("search-query").value.trim();
+  const query = document.getElementById("search-query").value.trim().toLowerCase();
 
   if (!query) {
-    alert("Please enter a search term.");
+    renderArticles(allArticles); // Show all if search is empty
     return;
   }
 
-  fetch(`/article-search?type=${type}&query=${encodeURIComponent(query)}`)
-    .then(res => res.json())
-    .then(data => {
-      if (!Array.isArray(data)) {
-        alert(data.message || "No articles found.");
-        return;
-      }
+  const filtered = allArticles.filter(article => {
+    if (type === "title" && article.title) {
+      return article.title.toLowerCase().includes(query);
+    } else if (type === "author" && article.author) {
+      return article.author.toLowerCase().includes(query);
+    } else if (type === "date" && article.publishedDate) {
+      const articleDate = new Date(article.publishedDate);
+      const yyyy = articleDate.getFullYear();
+      const mm = String(articleDate.getMonth() + 1).padStart(2, '0');
+      const dd = String(articleDate.getDate()).padStart(2, '0');
+      const formatted = `${yyyy}-${mm}-${dd}`; // Format: YYYY-MM-DD
+      return formatted === query;
+    }
+    return false;
+  });
 
-      renderSearchResults(data); // you must define this
-    })
-    .catch(err => {
-      console.error("Search error:", err);
-      alert("An error occurred while searching.");
-    });
+  renderArticles(filtered);
 });
 
+const searchInput = document.getElementById("search-query");
+const clearBtn = document.getElementById("clear-search");
+const searchType = document.getElementById("search-type");
 
-let allArticles = [];
+function updateClearBtnPosition() {
+  if (searchType.value === "date") {
+    clearBtn.style.right = "35px";
+  } else {
+    clearBtn.style.right = "10px";
+  }
+}
+
+// Initial call
+updateClearBtnPosition();
+
+// Change position when dropdown changes
+searchType.addEventListener("change", updateClearBtnPosition);
+
+// Toggle visibility of the clear button
+searchInput.addEventListener("input", () => {
+  clearBtn.style.display = searchInput.value ? "block" : "none";
+});
+
+// Clear input and reset articles
+clearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  clearBtn.style.display = "none";
+  renderArticles(allArticles); // Adjust based on your article loading logic
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
   allArticles = await loadArticles();
 });
 
-document.getElementById("search-btn").addEventListener("click", () => {
-  const type = document.getElementById("search-type").value;
-  const query = document.getElementById("search-query").value.trim();
-
-  if (!query) {
-    renderArticles(allArticles); // show all again
-    return;
-  }
-
-  fetch(`/article-search?type=${type}&query=${encodeURIComponent(query)}`)
-    .then(res => res.json())
-    .then(data => renderArticles(Array.isArray(data) ? data : []))
-    .catch(err => {
-      console.error("Search error:", err);
-      renderArticles([]);
-    });
-});
-
-document.getElementById("search-query").addEventListener("input", (e) => {
-  if (!e.target.value.trim()) {
-    renderArticles(allArticles);
-  }
-});

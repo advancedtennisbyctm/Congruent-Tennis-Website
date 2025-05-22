@@ -519,12 +519,16 @@ app.get('/article-search', async (req, res) => {
       break;
 
     case 'date':
-      const start = new Date(`${query}T00:00:00.000Z`);
-      const end = new Date(`${query}T23:59:59.999Z`);
-      filter = {
-        date: { $gte: start, $lte: end }
-      };
-      break;
+const inputDate = new Date(query);
+  const start = new Date(inputDate);
+  start.setHours(0, 0, 0, 0);
+  const end = new Date(inputDate);
+  end.setHours(23, 59, 59, 999);
+
+  filter = {
+    publishedDate: { $gte: start, $lte: end }
+  };
+  break;
 
     default:
       return res.status(400).json({ message: 'Invalid search type' });
