@@ -95,18 +95,12 @@ app.post("/signup", async (req, res) => {
     }
 });
 
-// Login
 app.post("/login", async (req, res) => {
     try {
-        const {
-            username,
-            password
-        } = req.body;
-        const user = await User.findOne({
-            username
-        });
-        if (!user) return res.status(404).send("Username not found.");
+        const { username, password } = req.body;
+        const user = await User.findOne({ username });
 
+        if (!user) return res.status(404).send("Username not found.");
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(401).send("Incorrect password.");
 
@@ -116,12 +110,13 @@ app.post("/login", async (req, res) => {
             lastName: user.lastName
         };
 
-        res.redirect("/"); // Reload index.html with session active
+        res.status(200).send("Login successful"); // frontend will redirect
     } catch (error) {
         console.error("Login Error:", error);
         res.status(500).send("Login failed.");
     }
 });
+
 
 // Logout
 app.get("/logout", (req, res) => {

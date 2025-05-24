@@ -24,6 +24,9 @@
 
     <link href="css/main_index.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
 </head>
 
 <body>
@@ -85,10 +88,10 @@
 
 
                     <div class="d-none d-lg-block ms-lg-3" id="login-area">
-    <!-- Default button, replaced by script.js if user is logged in -->
-    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample"
-        role="button" aria-controls="offcanvasExample">Member Login</a>
-</div>
+                        <!-- Default button, replaced by script.js if user is logged in -->
+                        <a class="btn custom-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                            aria-controls="offcanvasExample">Member Login</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -102,7 +105,7 @@
 
             <div class="offcanvas-body d-flex flex-column">
                 <!-- Form action points to the login route -->
-                <form action="/login" method="POST" class="custom-form">
+                <form id="login-form" class="custom-form">
                     <div class="form-group mb-4">
                         <!-- Username Input -->
                         <label for="name" class="form-label">Username:</label>
@@ -117,6 +120,8 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="submit-btn form-control">Login</button>
+                    <p id="login-error" style="color: #3D405B; margin-top: 10px; font-weight: bold;"></p>
+
                 </form>
 
 
@@ -124,7 +129,8 @@
                 <div class="mt-auto mb-5">
                     <p>
                         <strong class="text-white me-3">Any Questions?</strong>
-                        <a href="tel:010-020-0340" class="contact-link">010-020-0340</a>
+                        <a href="mailto:advancedtennisbyctm@gmail.com"
+                            class="contact-link">advancedtennisbyctm@gmail.com</a>
                     </p>
                 </div>
             </div>
@@ -245,7 +251,8 @@
                     <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
                         <div class="member-block">
                             <div class="member-block-image-wrap">
-                                <img src="images/members/chuck.jpg" class="member-block-image img-fluid" alt=""style="object-fit: cover; object-position: center 40%; height: 200px; width: 100%;">
+                                <img src="images/members/chuck.jpg" class="member-block-image img-fluid" alt=""
+                                    style="object-fit: cover; object-position: center 40%; height: 200px; width: 100%;">
 
                                 <ul class="social-icon">
                                     <li class="social-icon-item">
@@ -266,13 +273,22 @@
                             </div>
 
                             <div class="member-bio mt-3">
-                                <p>Chuck Tomlin, a Naval Aviator and former instructor at the USN Test Pilot Center, added tennis coaching to his resume in 1992, which already included two Black Belts and D1 football.
+                                <p>Chuck Tomlin, a Naval Aviator and former instructor at the USN Test Pilot Center,
+                                    added tennis coaching to his resume in 1992, which already included two Black Belts
+                                    and D1 football.
 
-While studying Industrial Engineering at Auburn, he made varsity football as a true freshman. By 1996, he began challenging traditional tennis technique and tactics.
+                                    While studying Industrial Engineering at Auburn, he made varsity football as a true
+                                    freshman. By 1996, he began challenging traditional tennis technique and tactics.
 
-Through interactions with top coaches—Bollettieri, Van Der Meer, Rick Macci, Yandell, and Vic Braden—he developed innovative methods to enhance player performance.</p>
+                                    Through interactions with top coaches—Bollettieri, Van Der Meer, Rick Macci,
+                                    Yandell, and Vic Braden—he developed innovative methods to enhance player
+                                    performance.</p>
 
-                                <p>By 2002, Tomlin introduced the Serve Code to establish power serving fundamentals, followed by the <strong> Congrent Tennis Model (CTM) </strong>, <strong> Shot Matching</strong>, and a partnership with John Carpenter to unify coaching—creating a <strong> Higher Resolution </strong> with the Advanced Tennis Foundation, endorsed by Johan Kriek in Modern Tennis Instruction.</p>
+                                <p>By 2002, Tomlin introduced the Serve Code to establish power serving fundamentals,
+                                    followed by the <strong> Congrent Tennis Model (CTM) </strong>, <strong> Shot
+                                        Matching</strong>, and a partnership with John Carpenter to unify
+                                    coaching—creating a <strong> Higher Resolution </strong> with the Advanced Tennis
+                                    Foundation, endorsed by Johan Kriek in Modern Tennis Instruction.</p>
                             </div>
                         </div>
                     </div>
@@ -298,18 +314,28 @@ Through interactions with top coaches—Bollettieri, Van Der Meer, Rick Macci, Y
                                 <p class="ms-auto">Coach</p>
                             </div>
                             <div class="member-bio mt-3">
-                                <p>John Carpenter, from East St. Louis, Illinois, grew up collecting baseball cards, comics, and tennis books. At 15 years old, coaches told him to stop jumping on open-stance forehands, leading to a decline in his game. Shifting focus, John aimed to become a master coach, collecting hundreds of books and studying tennis theory from Tilden to Braden.</p>
+                                <p>John Carpenter, from East St. Louis, Illinois, grew up collecting baseball cards,
+                                    comics, and tennis books. At 15 years old, coaches told him to stop jumping on
+                                    open-stance forehands, leading to a decline in his game. Shifting focus, John aimed
+                                    to become a master coach, collecting hundreds of books and studying tennis theory
+                                    from Tilden to Braden.</p>
 
-<p>In 2003, he tested a contrarian method and quickly built a waiting list of students. In 2004, he partnered with internationally renowned coach <strong> Oscar Wegner </strong>to reform tennis instruction.
+                                <p>In 2003, he tested a contrarian method and quickly built a waiting list of students.
+                                    In 2004, he partnered with internationally renowned coach <strong> Oscar Wegner
+                                    </strong>to reform tennis instruction.
 
-In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coaching Association (MTMCA) </strong>. In 2016, John's research led him to a new frontier—partnering with unifying Atlanta coach <strong> Chuck Tomlin </strong> to continue evolving tennis instruction.</p>
+                                    In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coaching
+                                        Association (MTMCA) </strong>. In 2016, John's research led him to a new
+                                    frontier—partnering with unifying Atlanta coach <strong> Chuck Tomlin </strong> to
+                                    continue evolving tennis instruction.</p>
                             </div>
                         </div>
                     </div>
 
 
                     <div class="custom-btn-group">
-                        <a href="#section_3" class="btn custom-btn smoothscroll me-3" id="about-member-btn">Become A Member</a>
+                        <a href="#section_3" class="btn custom-btn smoothscroll me-3" id="about-member-btn">Become A
+                            Member</a>
                     </div>
 
                 </div>
@@ -340,7 +366,7 @@ In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coach
                             <p>
                                 Elevate your tennis game with <strong>exclusive</strong> tips, match strategies,
                                 gear insights, and pro updates. Stay informed, inspired,
-                                and ready to win. <strong>Subscribe Now!</strong> 🏆
+                                and ready to win. <strong>Subscribe Now!</strong> <i class="fa-solid fa-trophy"></i>
                             </p>
 
                             <form id="newsletterForm" class="news-custom-form mt-lg-4 mt-2" role="form">
@@ -439,7 +465,7 @@ In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coach
                                             <i class="bi-check-circle-fill"></i>
                                         </td>
                                     </tr>
-                                                                        <tr>
+                                    <tr>
                                         <th scope="row" class="text-start">Interact Within CTM Articles/Forum</th>
 
                                         <td>
@@ -464,7 +490,7 @@ In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coach
 
                                     </tr>
 
-                                    
+
 
                                     <tr>
                                         <th scope="row" class="text-start">Database Access to ALL Previous Matches</th>
@@ -612,21 +638,20 @@ In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coach
                                 <div class="contact-info-body">
                                     <strong>Atlanta, Georgia, United States</strong>
 
-                                    <p class="mt-2 mb-1">
-                                        <a href="tel: 010-020-0340" class="contact-link">
-                                            000-000-0000
-                                        </a>
-                                    </p>
 
                                     <p class="mb-0">
-                                        <a href="mailto:info@company.com" class="contact-link">
+                                        <a href="mailto:advancedtennisbyctm@gmail.com" class="contact-link">
                                             advancedtennisbyctm@gmail.com
                                         </a>
                                     </p>
                                 </div>
 
-                                <div class="contact-info-footer">
-                                    <a href="#">Directions</a>
+                                <div class="contact-info-footer" style="text-align: center;">
+                                    <a href="mailto:advancedtennisbyctm@gmail.com" class="contact-link"
+                                        style="color: #3D405B; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <span>Email Us</span>
+                                    </a>
                                 </div>
                             </div>
 
@@ -654,17 +679,22 @@ In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coach
                 </div>
 
                 <div class="col-lg-3 col-12">
-                    <h5 class="site-footer-title mb-4">Join Us</h5>
 
-                    <p class="d-flex border-bottom pb-3 mb-3 me-lg-3">
-                        <span>Mon-Fri</span>
-                        6:00 AM - 6:00 PM
-                    </p>
+                    <div class="testimonial-slider-container">
+  <h5 class="site-footer-title mb-4">What Players Say</h5>
+  <div class="testimonial-slider-wrapper">
+    <div class="testimonial-slider">
+      <div class="testimonial">"This training transformed my game." – Alex M.</div>
+      <div class="testimonial">"Insightful and effective coaching!" – Jasmine T.</div>
+      <div class="testimonial">"I finally feel confident on the court." – Ryan S.</div>
+      <div class="testimonial">"Their tactical breakdowns are elite." – Chloe B.</div>
+      <div class="testimonial">"Highly recommend for competitive players." – Ethan Z.</div>
+    </div>
+  </div>
+</div>
 
-                    <p class="d-flex me-lg-3">
-                        <span>Sat-Sun</span>
-                        6:30 AM - 8:30 PM
-                    </p>
+
+
                     <br>
                     <p class="copyright-text">Copyright © 2024 Advanced Tennis Foundation</p>
                 </div>
@@ -681,9 +711,7 @@ In 2007, John and Wegner co-founded the <strong> Modern Tennis Methodology Coach
                                 class="social-icon-link bi-facebook"></a>
                         </li>
 
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-whatsapp"></a>
-                        </li>
+
                     </ul>
 
                 </div>

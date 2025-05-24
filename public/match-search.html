@@ -102,7 +102,7 @@
 
             <div class="offcanvas-body d-flex flex-column">
                 <!-- Form action points to the login route -->
-                <form action="/login" method="POST" class="custom-form">
+                <form id="login-form" class="custom-form">
                     <div class="form-group mb-4">
                         <!-- Username Input -->
                         <label for="name" class="form-label">Username:</label>
@@ -117,6 +117,8 @@
 
                     <!-- Submit Button -->
                     <button type="submit" class="submit-btn form-control">Login</button>
+<p id="login-error" style="color: #3D405B; margin-top: 10px; font-weight: bold;"></p>
+
                 </form>
 
 
@@ -124,7 +126,8 @@
                 <div class="mt-auto mb-5">
                     <p>
                         <strong class="text-white me-3">Any Questions?</strong>
-                        <a href="tel:010-020-0340" class="contact-link">010-020-0340</a>
+                        <a href="mailto:advancedtennisbyctm@gmail.com"
+                            class="contact-link">advancedtennisbyctm@gmail.com</a>
                     </p>
                 </div>
             </div>
@@ -249,21 +252,33 @@
                 </div>
 
                 <div class="col-lg-3 col-12">
-                    <h5 class="site-footer-title mb-4">Join Us</h5>
+                    <div class="contact-info mt-3" style="transform: scale(0.85); transform-origin: top left;">
+                        <img src="../images/WorldMap.svg" class="img-fluid" alt="Map"
+                            style="width: 175%; max-width: none; height: auto; transform: translateX(-140px)">
 
-                    <p class="d-flex border-bottom pb-3 mb-3 me-lg-3">
-                        <span>Mon-Fri</span>
-                        6:00 AM - 6:00 PM
-                    </p>
+                        <div class="contact-info-item">
+                            <div class="contact-info-body" style="text-align: center;">
+                                <strong>Atlanta, Georgia, United States</strong>
+                                <p class="mb-0">
+                                    <a href="mailto:advancedtennisbyctm@gmail.com" class="contact-link">
+                                        advancedtennisbyctm@gmail.com
+                                    </a>
+                                </p>
+                            </div>
 
-                    <p class="d-flex me-lg-3">
-                        <span>Sat-Sun</span>
-                        6:30 AM - 8:30 PM
-                    </p>
-                    <br>
-                    <p class="copyright-text">Copyright © 2024 Advanced Tennis Foundation</p>
+                            <div class="contact-info-footer" style="text-align: center;">
+                                <a href="mailto:advancedtennisbyctm@gmail.com" class="contact-link"
+                                    style="color: #3D405B; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <span>Email Us</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="copyright-text mt-3">Copyright © 2024 Advanced Tennis Foundation</p>
                 </div>
-
                 <div class="col-lg-2 col-12 ms-auto">
                     <ul class="social-icon mt-lg-5 mt-3 mb-4">
                         <li class="social-icon-item">
@@ -276,9 +291,7 @@
                                 class="social-icon-link bi-facebook"></a>
                         </li>
 
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-whatsapp"></a>
-                        </li>
+                        
                     </ul>
 
                 </div>

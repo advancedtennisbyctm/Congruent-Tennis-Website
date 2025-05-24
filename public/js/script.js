@@ -39,6 +39,33 @@ window.addEventListener("DOMContentLoaded", () => {
         .catch(err => console.error("Session fetch error:", err));
 });
 
+document.getElementById("login-form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const username = formData.get("username");
+  const password = formData.get("password");
+  const errorBox = document.getElementById("login-error");
+
+  try {
+    const response = await fetch("/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      errorBox.textContent = errorText; // Show error message below form
+    } else {
+      window.location.href = "/"; // Reload page on successful login
+    }
+  } catch (err) {
+    errorBox.textContent = "An unexpected error occurred.";
+  }
+});
+
 
 document.getElementById("newsletterForm").addEventListener("submit", async function (e) {
     e.preventDefault(); // Prevent the page from reloading on form submission
@@ -159,66 +186,11 @@ document.getElementById("contactForm").addEventListener("submit", async function
     }
 });
 
+const slider = document.querySelector('.testimonial-slider');
+  const testimonialCount = slider.children.length;
+  let index = 0;
 
-let index = 0;
-const testimonials = document.querySelector('.testimonial-wrapper');
-const totalTestimonials = document.querySelectorAll('.testimonial').length;
-const dotsContainer = document.getElementById('dots-container');
-let interval;
-
-// Create dots dynamically
-function createDots() {
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < totalTestimonials; i++) {
-        let dot = document.createElement('span');
-        dot.classList.add('dot');
-        dot.setAttribute('onclick', `goToTestimonial(${i})`);
-        dotsContainer.appendChild(dot);
-    }
-    updateDots();
-}
-
-function updateSlider() {
-    testimonials.style.transform = `translateX(-${index * 100}%)`;
-    updateDots();
-}
-
-function updateDots() {
-    let dots = document.querySelectorAll('.dot');
-    dots.forEach((dot, i) => {
-        dot.classList.remove('active');
-        if (i === index) {
-            dot.classList.add('active');
-        }
-    });
-}
-
-function nextTestimonial() {
-    index = (index + 1) % totalTestimonials;
-    updateSlider();
-}
-
-function prevTestimonial() {
-    index = (index - 1 + totalTestimonials) % totalTestimonials;
-    updateSlider();
-}
-
-function goToTestimonial(slideIndex) {
-    index = slideIndex;
-    updateSlider();
-}
-
-function startSlider() {
-    interval = setInterval(nextTestimonial, 3000);
-}
-
-function stopSlider() {
-    clearInterval(interval);
-}
-
-document.getElementById('testimonial-container').addEventListener('mouseenter', stopSlider);
-document.getElementById('testimonial-container').addEventListener('mouseleave', startSlider);
-
-// Initialize slider
-createDots();
-startSlider();
+  setInterval(() => {
+    index = (index + 1) % testimonialCount;
+    slider.style.transform = `translateY(-${index * 80}px)`; // 80px = testimonial height
+  }, 3000);

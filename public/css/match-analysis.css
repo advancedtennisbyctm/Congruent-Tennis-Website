@@ -821,6 +821,52 @@ strong {
   margin-left: 15px;
 }
 /*---------------------------------------
+  CONTACT               
+-----------------------------------------*/
+.contact-form .form-floating>textarea {
+  border-radius: var(--border-radius-medium);
+  height: 120px;
+}
+
+.contact-info {
+  position: relative;
+}
+
+.contact-info-item {
+  background: var(--secondary-color);
+  border-radius: var(--border-radius-medium);
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.contact-info-body {
+  padding: 20px 30px;
+}
+
+.contact-info-body strong,
+.contact-info-item a {
+  color: var(--white-color);
+}
+
+.contact-info-footer {
+  background-color: var(--custom-btn-bg-hover-color);
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.contact-info-footer:hover {
+  background-color: var(--custom-btn-bg-color);
+}
+
+.contact-info-footer a {
+  display: block;
+  font-weight: var(--font-weight-bold);
+}
+/*---------------------------------------
   SOCIAL ICON               
 -----------------------------------------*/
 .social-icon {
