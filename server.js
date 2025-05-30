@@ -390,6 +390,18 @@ const multer = require('multer');
 
 const upload = multer({ storage: multer.memoryStorage() });
 
+app.get("/articles", async (req, res) => {
+  try {
+    const articles = await Article.find({}, { article_data: 0, image_data: 0 }) // exclude large fields
+      .sort({ date: -1 })
+      .limit(100); // adjust or paginate
+
+    res.json(articles);
+  } catch (err) {
+    console.error("Error loading articles:", err.message);
+    res.status(500).json({ error: "Failed to load articles." });
+  }
+});
 
 app.post('/upload_article', upload.fields([
   { name: 'article_file', maxCount: 1 },
@@ -490,18 +502,7 @@ app.post('/articles/:articleId/comments/:commentId/reply', async (req, res) => {
 });
 
 
-app.get("/articles", async (req, res) => {
-  try {
-    const articles = await Article.find({}, { article_data: 0, image_data: 0 }) // exclude large fields
-      .sort({ date: -1 })
-      .limit(100); // adjust or paginate
 
-    res.json(articles);
-  } catch (err) {
-    console.error("Error loading articles:", err.message);
-    res.status(500).json({ error: "Failed to load articles." });
-  }
-});
 
 
 
