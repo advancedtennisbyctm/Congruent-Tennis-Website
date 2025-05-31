@@ -392,9 +392,11 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 app.get("/articles", async (req, res) => {
   try {
-    const articles = await Article.find({}, { article_data: 0, image_data: 0 }) // exclude large fields
-      .sort({ date: -1 })
-      .limit(100); // adjust or paginate
+        const articles = await Article.aggregate([
+        { $project: { article_data: 0, image_data: 0 } },
+        { $sort: { date: -1 } },
+        { $limit: 100 }
+        ], { allowDiskUse: true });
 
     res.json(articles);
   } catch (err) {
