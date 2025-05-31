@@ -186,6 +186,17 @@ document.getElementById("contactForm").addEventListener("submit", async function
     }
 });
 
+function openPdfModal() {
+  const modal = new bootstrap.Modal(document.getElementById("pdfModal"));
+  const viewer = document.getElementById("pdfViewer");
+  const label = document.getElementById("pdfModalLabel");
+
+  viewer.src = "/pdf/Modern Tennis Instruction-A Historical Guide To Play Your Best Tennis.pdf";
+  label.textContent = "Modern Tennis Instruction";
+  modal.show();
+}
+
+
 const slider = document.querySelector('.testimonial-slider');
   const testimonialCount = slider.children.length;
   let index = 0;
@@ -194,3 +205,5 @@ const slider = document.querySelector('.testimonial-slider');
     index = (index + 1) % testimonialCount;
     slider.style.transform = `translateY(-${index * 80}px)`; // 80px = testimonial height
   }, 3000);
+
+

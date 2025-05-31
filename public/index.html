@@ -298,7 +298,31 @@
                             <div class="member-block-image-wrap">
                                 <img src="images/members/john.jpg" class="member-block-image img-fluid" alt="">
 
-                                
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="javascript:void(0);" onclick="openPdfModal()"
+                                            class="social-icon-link bi-book"></a>
+                                    </li>
+
+                                </ul>
+
+                                <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="pdfModalLabel">Modern Tennis Instruction-A Historical Guide to Play Your Best Tennis: Limited Edition
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body" style="height: 80vh;">
+                                                <iframe id="pdfViewer" width="100%" height="100%"
+                                                    frameborder="0"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="member-block-info d-flex align-items-center">
@@ -674,17 +698,17 @@
                 <div class="col-lg-3 col-12">
 
                     <div class="testimonial-slider-container">
-  <h5 class="site-footer-title mb-4">What Players Say</h5>
-  <div class="testimonial-slider-wrapper">
-    <div class="testimonial-slider">
-      <div class="testimonial">"This training transformed my game." – Alex M.</div>
-      <div class="testimonial">"Insightful and effective coaching!" – Jasmine T.</div>
-      <div class="testimonial">"I finally feel confident on the court." – Ryan S.</div>
-      <div class="testimonial">"Their tactical breakdowns are elite." – Chloe B.</div>
-      <div class="testimonial">"Highly recommend for competitive players." – Ethan Z.</div>
-    </div>
-  </div>
-</div>
+                        <h5 class="site-footer-title mb-4">What Players Say</h5>
+                        <div class="testimonial-slider-wrapper">
+                            <div class="testimonial-slider">
+                                <div class="testimonial">"This training transformed my game." – Alex M.</div>
+                                <div class="testimonial">"Insightful and effective coaching!" – Jasmine T.</div>
+                                <div class="testimonial">"I finally feel confident on the court." – Ryan S.</div>
+                                <div class="testimonial">"Their tactical breakdowns are elite." – Chloe B.</div>
+                                <div class="testimonial">"Highly recommend for competitive players." – Ethan Z.</div>
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -718,6 +742,8 @@
             </path>
         </svg>
     </footer>
+
+
 
 
     <!-- JAVASCRIPT FILES -->
