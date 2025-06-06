@@ -1231,7 +1231,10 @@ strong {
   margin-right: auto;
 }
 
-
+.copyright-text {
+  white-space: nowrap;     
+  margin: 0;               
+}
 /*---------------------------------------
   CUSTOM FORM               
 -----------------------------------------*/
@@ -1309,6 +1312,7 @@ strong {
 -----------------------------------------*/
 .social-icon {
   margin: 0;
+  margin-left: 100px;
   padding: 0;
 }
 
@@ -1518,7 +1522,8 @@ strong {
 }
 
 .testimonial-slider-wrapper {
-  height: 80px;                /* match individual testimonial height */
+  height: 220px;             
+  width: 400px;   
   overflow: hidden;
   position: relative;
 }
@@ -1530,7 +1535,7 @@ strong {
 }
 
 .testimonial {
-  height: 80px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;

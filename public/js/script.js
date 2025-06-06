@@ -192,7 +192,7 @@ function openPdfModal() {
   const label = document.getElementById("pdfModalLabel");
 
   viewer.src = "/pdf/Modern Tennis Instruction-A Historical Guide To Play Your Best Tennis.pdf";
-  label.textContent = "Modern Tennis Instruction";
+  label.textContent = "Modern Tennis Instruction-A Historical Guide to Play Your Best Tennis";
   modal.show();
 }
 
@@ -203,7 +203,7 @@ const slider = document.querySelector('.testimonial-slider');
 
   setInterval(() => {
     index = (index + 1) % testimonialCount;
-    slider.style.transform = `translateY(-${index * 80}px)`; // 80px = testimonial height
-  }, 3000);
+    slider.style.transform = `translateY(-${index * 220}px)`; // 80px = testimonial height
+  }, 8000);
 
 
