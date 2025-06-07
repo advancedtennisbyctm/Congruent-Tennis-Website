@@ -398,6 +398,8 @@ app.get("/articles", async (req, res) => {
   { $limit: 100 }
 ], { allowDiskUse: true });
 
+    res.set('Cache-Control', 'no-store')
+
     res.json(articles);
   } catch (err) {
     console.error("Error loading articles:", err.message);
