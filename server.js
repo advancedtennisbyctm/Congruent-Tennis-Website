@@ -3,6 +3,27 @@ require('dotenv').config();
 
 
 const express = require("express");
+const cors = require('cors');
+
+const allowedOrigins = [
+    'https://www.congruenttennis.com',
+    'https://congruent-tennis-website.onrender.com',
+    'http://localhost:5000'
+];
+
+app.use(cors({
+    origin: function(origin, callback) {
+        // Allow requests with no origin (like Postman or curl)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('CORS not allowed for this origin: ' + origin));
+        }
+    },
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 const path = require("path");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
