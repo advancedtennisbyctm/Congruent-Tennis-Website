@@ -2952,6 +2952,10 @@ function startMatch(sets) {
             const matchName = document.getElementById('matchName').value;
             const matchDate = document.getElementById('matchDate').value;
 
+            if (typeof finalSetScore === 'undefined' || finalSetScore === null) {
+                alert('Please start recording the match before saving to the database.');
+                return; // Stop execution
+}
 
             function getRacketValue(player) {
                 const racketSelect = document.getElementById(`${player}Racket`);

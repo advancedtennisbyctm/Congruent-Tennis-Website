@@ -1310,11 +1310,15 @@ strong {
 /*---------------------------------------
   SOCIAL ICON               
 -----------------------------------------*/
+#bottom-icon {
+    margin-left: 100px;
+}
+
 .social-icon {
   margin: 0;
-  margin-left: 100px;
   padding: 0;
 }
+
 
 .social-icon-item {
   list-style: none;

@@ -248,17 +248,17 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="title" class="form-control mb-2" placeholder="Title" required>
-                            <input type="text" name="author" class="form-control mb-2" placeholder="Author" required>
-                            <textarea name="summary" class="form-control mb-2"
+                            <input type="text" name="title" class="form-control-article mb-2" placeholder="Title" required>
+                            <input type="text" name="author" class="form-control-article mb-2" placeholder="Author" required>
+                            <textarea name="summary" class="form-control-article mb-2"
                                 placeholder="Summary (Optional)"></textarea>
-                            <label for="article-file" class="form-label">Upload Article File <small
+                            <label for="article-file" class="form-label-article">Upload Article File <small
                                     class="text-light">(PDF or TXT)</small></label>
-                            <input type="file" name="article_file" class="form-control mb-2" accept=".pdf,.txt"
+                            <input type="file" name="article_file" class="form-control-article mb-2" accept=".pdf,.txt"
                                 required>
-                            <label for="image-file" class="form-label ">Cover Image <small class="text-light">(JPG, PNG,
+                            <label for="image-file" class="form-label-article">Cover Image <small class="text-light">(JPG, PNG,
                                     etc.)</small></label>
-                            <input type="file" name="image_file" class="form-control mb-2" accept="image/*">
+                            <input type="file" name="image_file" class="form-control-article mb-2" accept="image/*">
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn custom-btn">Upload</button>
@@ -278,9 +278,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input type="text" name="comment_author" class="form-control mb-3" placeholder="Your Name"
+                            <input type="text" name="comment_author" class="form-control-article mb-3" placeholder="Your Name"
                                 required>
-                            <textarea name="comment_text" class="form-control" placeholder="Write Your Comment"
+                            <textarea name="comment_text" class="form-control-article" placeholder="Write Your Comment"
                                 required></textarea>
                             <input type="hidden" name="article_id" id="comment-article-id">
                         </div>

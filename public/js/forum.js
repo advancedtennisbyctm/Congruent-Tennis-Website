@@ -35,6 +35,7 @@ document.getElementById("upload-form").addEventListener("submit", function (e) {
         });
 });
 
+
 document.getElementById("search-type").addEventListener("change", (e) => {
   const queryInput = document.getElementById("search-query");
   const selected = e.target.value;
@@ -136,6 +137,7 @@ function toggleCommentDropdown(articleId) {
     arrow.textContent = isHidden ? "▼" : "◄";
 }
 document.addEventListener("DOMContentLoaded", loadArticles);
+
 
 
 function openPdfModal(pdfUrl, title) {
