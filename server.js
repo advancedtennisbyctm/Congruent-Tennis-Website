@@ -5,6 +5,19 @@ require('dotenv').config();
 const express = require("express");
 const cors = require('cors');
 
+
+const path = require("path");
+const bcrypt = require("bcrypt");
+const session = require("express-session");
+
+const {
+    connectDatabase,
+    User,
+    Article
+} = require("./src/config.js");
+
+
+const app = express();
 const allowedOrigins = [
     'https://www.congruenttennis.com',
     'https://congruent-tennis-website.onrender.com',
@@ -24,19 +37,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
-const path = require("path");
-const bcrypt = require("bcrypt");
-const session = require("express-session");
-
-const {
-    connectDatabase,
-    User,
-    Article
-} = require("./src/config.js");
-
-
-const app = express();
-
 // Connect to the database
 connectDatabase();
 
